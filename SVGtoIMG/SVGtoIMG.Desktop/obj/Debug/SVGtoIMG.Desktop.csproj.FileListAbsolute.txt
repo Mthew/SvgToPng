@@ -1,0 +1,16 @@
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe.config
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.pdb
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csprojResolveAssemblyReference.cache
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.Properties.Resources.resources
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csproj.GenerateResource.Cache
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.exe
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.pdb
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.dll
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.dll
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.pdb
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.pdb
+c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.xml
+C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe.config
+C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.exe
+C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.pdb
