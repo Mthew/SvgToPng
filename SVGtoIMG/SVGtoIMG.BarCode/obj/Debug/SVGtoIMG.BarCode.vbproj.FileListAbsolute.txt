@@ -1,0 +1,9 @@
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.Resources.resources
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.vbproj.GenerateResource.Cache
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.xml
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.xml
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.vbprojResolveAssemblyReference.cache

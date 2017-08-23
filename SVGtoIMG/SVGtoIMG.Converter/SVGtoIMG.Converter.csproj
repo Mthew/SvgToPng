@@ -30,6 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KeepAutomation.Barcode.Web">
+      <HintPath>..\..\..\..\..\..\..\test\Referencias\KA.Barcode.for.ASPNET\KeepAutomation.Barcode.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Neodynamic.SDK.Barcode, Version=6.0.2000.0, Culture=neutral, PublicKeyToken=c6b33c3093a0d4cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\Neodynamic.SDK.Barcode.6.0.2017.0\lib\Neodynamic.SDK.Barcode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Svg, Version=2.2.1.39233, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
       <HintPath>..\packages\Svg.2.3.0\lib\net35\Svg.dll</HintPath>
       <Private>True</Private>
@@ -42,13 +57,49 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\..\..\..\..\D\SourceCode\Git\boletos3\Verificador\Verificador.Vista\bin\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarcodeCommon.cs" />
+    <Compile Include="BarcodeLib.cs" />
+    <Compile Include="BarcodeXML.cs">
+      <DependentUpon>BarcodeXML.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BarcodeXML.designer.cs">
+      <DependentUpon>BarcodeXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodeXML2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BarcodeXML.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Code39.cs" />
+    <Compile Include="IBarcode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BarcodeXML.xsc">
+      <DependentUpon>BarcodeXML.xsd</DependentUpon>
+    </None>
+    <None Include="BarcodeXML.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BarcodeXML2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BarcodeXML.xss">
+      <DependentUpon>BarcodeXML.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SVGtoIMG.BarCode\SVGtoIMG.BarCode.vbproj">
+      <Project>{871de9b4-069c-45c4-8531-7ad6ceae020d}</Project>
+      <Name>SVGtoIMG.BarCode</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

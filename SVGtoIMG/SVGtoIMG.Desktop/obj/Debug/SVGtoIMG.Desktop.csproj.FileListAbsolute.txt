@@ -11,6 +11,42 @@ c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bi
 c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.pdb
 c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.pdb
 c:\users\asus\documents\visual studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.xml
-C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe.config
-C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.exe
-C:\Users\DESARROLLO\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.pdb
+C:\Users\Asus\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\KeepAutomation.Barcode.Web.dll
+C:\Users\Asus\Documents\Visual Studio 2013\Projects\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Neodynamic.SDK.Barcode.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe.config
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.exe
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.pdb
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.pdb
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\KeepAutomation.Barcode.Web.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\PdfSharp.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Neodynamic.SDK.Barcode.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.pdb
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\PdfSharp.xml
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.pdb
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.xml
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\de\PdfSharp.resources.dll
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csprojResolveAssemblyReference.cache
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.Properties.Resources.resources
+C:\SourceCode\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csproj.GenerateResource.Cache
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe.config
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.exe
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.exe
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Desktop.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\PdfSharp.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.Converter.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\PdfSharp.xml
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.xml
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\de\PdfSharp.resources.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csprojResolveAssemblyReference.cache
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.Properties.Resources.resources
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\obj\Debug\SVGtoIMG.Desktop.csproj.GenerateResource.Cache
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.BarCode.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\SVGtoIMG.BarCode.xml
