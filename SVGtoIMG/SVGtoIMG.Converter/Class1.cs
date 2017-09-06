@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,8 +34,8 @@ namespace SVGtoIMG.Converter
         private Hashtable _encoding;
         private SVGtoIMG.BarCode.BarCode barCodeClass;
 
-
-        public Converter() {
+        public Converter()
+        {
             barCodeClass = new SVGtoIMG.BarCode.BarCode();
             this._encoding = new Hashtable();
             _encoding.Add("*", "bWbwBwBwb");
@@ -105,7 +105,7 @@ namespace SVGtoIMG.Converter
         //}
 
 
-        public Bitmap getBarcode(int type, long n)
+        public Image getBarcode(int type, string n)
         {
             //Bitmap temp = new Bitmap(1, 1);
             //temp.SetPixel(0, 0, Color.White);
@@ -116,9 +116,9 @@ namespace SVGtoIMG.Converter
             short W = 3900;
             short H = 300;
 
-           
 
-            return new Bitmap(barCodeClass.GenerateBarcodeImage(W, H, n.ToString()));
+
+            //return new Bitmap(barCodeClass.GenerateBarcodeImage(W, H, n.ToString()));
 
             //'Draw the barcode onto the barcode printing page canvas
             //dc.DrawImage(thisBarCode, New PointF(pgX, pgY))
@@ -142,9 +142,9 @@ namespace SVGtoIMG.Converter
             //Zen.Barcode.BarcodeSymbology s = Zen.Barcode.BarcodeSymbology.Code39C;
             //BarcodeDraw drawObject = BarcodeDrawFactory.GetSymbology(s);
 
-            //var metrics = drawObject.GetDefaultMetrics(300);
-            //metrics.Scale = 4;
-            //var barcodeImage = drawObject.Draw(n.ToString(), metrics);
+            //var metrics = drawObject.GetDefaultMetrics(40);
+            //metrics.Scale = 1;
+            //var barcodeImage = drawObject.Draw(n, metrics);
 
             //return barcodeImage;
             //__________________________________________________________
@@ -158,6 +158,26 @@ namespace SVGtoIMG.Converter
             //    //bm.Save(@"C:\test\BarCode(3).jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
             //    //byte[] imageBytes = ms.ToArray();
             //    return Image.FromStream(ms);
+            //    //return string.Format("data:image/png;base64,{0}", Convert.ToBase64String(imageBytes));
+            //}
+            //______________________________________________________________
+            Zen.Barcode.BarcodeSymbology s = Zen.Barcode.BarcodeSymbology.Code128;
+            BarcodeDraw drawObject = BarcodeDrawFactory.GetSymbology(s);
+
+            var metrics = drawObject.GetDefaultMetrics(40);
+            metrics.Scale = 1;
+            var barcodeImage = drawObject.Draw(n.ToString(), metrics);
+
+            return barcodeImage;
+
+            //Bitmap bm = ResizeImage(barcodeImage, 398, 60);
+
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    //barcodeImage.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            //    bm.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //    bm.Save(@"C:\test\BarCode(3).jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            //    byte[] imageBytes = ms.ToArray();
             //    //return string.Format("data:image/png;base64,{0}", Convert.ToBase64String(imageBytes));
             //}
         }
@@ -250,7 +270,7 @@ namespace SVGtoIMG.Converter
 
 
                 var n = 630670420;
-                Image barcode = getBarcode(1, n);
+                //Image barcode = getBarcode(1, n);
 
                 //Bitmap bm = new Bitmap(4857, 12893);
 
@@ -287,13 +307,13 @@ namespace SVGtoIMG.Converter
                        new XRect(0, 0, page.Width, page.Height),
                        XStringFormat.Center);
 
-                    gfx.DrawImage(barcode, new Point(80, 1200));
+                    //gfx.DrawImage(barcode, new Point(80, 1200));
 
                     state = gfx.Save();
 
                     gfx.RotateAtTransform(90, new XPoint(350, 500));
 
-                    gfx.DrawString("Empacadorea y empaque SAS TICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÃ“N DE ESTA ENTRADA".ToUpper(),
+                    gfx.DrawString("Empacadorea y empaque SAS TICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(),
                         new XFont("Arial", 10, XFontStyle.Italic, options),
                         XBrushes.Black,
                         new XRect(100, 0, page.Width, page.Height),
@@ -304,11 +324,11 @@ namespace SVGtoIMG.Converter
 
                     //XRect rect = new XRect(40, 100, 250, 220);
                     //gfx.DrawRectangle(XBrushes.SeaShell, rect);
-                    //tf.DrawString("Empacadorea y empaque SAS TICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÃ“N DE ESTA ENTRADA".ToUpper(), font, XBrushes.Black, rect, XStringFormats.TopLeft);
+                    //tf.DrawString("Empacadorea y empaque SAS TICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(), font, XBrushes.Black, rect, XStringFormats.TopLeft);
 
                     gfx.Restore(state);
 
-                    //gfx.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÃ“N DE ESTA ENTRADA".ToUpper(), new Font("Arial", 10f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World), new SolidBrush(Color.Black), 229f, 1032f);
+                    //gfx.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(), new Font("Arial", 10f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World), new SolidBrush(Color.Black), 229f, 1032f);
 
 
                     gfx.Save();
@@ -317,22 +337,41 @@ namespace SVGtoIMG.Converter
             }
         }
 
-       
 
-        public void DrawFromSvg()
+
+        public MemoryStream DrawFromSvg(int Width, int Heigth)
         {
+            float wCenter = Width / 2;
             //int Width = 4857, Heigth = 12893;
-            int Width = 606, Heigth = 1669;
+            //int Width = 606 / 2, Heigth = 1669 / 2;
             string pngPath = @"C:\test\ImageGenerated(10).bmp";
 
             //var n = DateTime.Now.ToFileTime();
-            var n = 630670420;
+            var n = DateTime.Now.ToFileTime();
             //Image barcode = getBarcode(1, n);
 
+            Image bk = Image.FromFile(@"C:\test\Image(1).png");
+
+            //string imageText = System.IO.File.ReadAllText(@"C:\test\Image.txt");
+            ////string fromBase = String.Format("data:image/png;base64,{0}", imageText);
+
+            //byte[] imageBytes = Convert.FromBase64String(imageText);
+            //Image bk = null;
+            //using (MemoryStream ms1 = new MemoryStream(imageBytes, 0,
+            //  imageBytes.Length))
+            //{
+            //    ms1.Write(imageBytes, 0, imageBytes.Length);
+            //    bk = System.Drawing.Image.FromStream(ms1, true);
+            //}
+
             //Bitmap bm = new Bitmap(606, 1669);
-            Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppGrayScale);
+            //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//saca menos cuadros
+            //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format32bppArgb);//Original
 
             Rectangle canvas = new Rectangle(0, 0, Width, Heigth);
+
+            //Image bk2 = ResizeImage(bk, bm.Width, bm.Height);
 
             //bm.SetResolution(600, 600);
             Graphics g = Graphics.FromImage(bm);
@@ -343,9 +382,12 @@ namespace SVGtoIMG.Converter
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
 
-            g.DrawString("Ticket 99".ToUpper(), new Font("Arial", 10, System.Drawing.FontStyle.Bold), new SolidBrush(Color.Black), 229f, 50f);
-            g.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÃ“N DE ESTA ENTRADA".ToUpper(), new Font("Arial", 8, System.Drawing.FontStyle.Bold), new SolidBrush(Color.Black), 10f, 200f);
-            g.DrawString(n.ToString().ToUpper(), new Font("Arial", 12f, System.Drawing.FontStyle.Regular), new SolidBrush(Color.Black), 229f, 500f);
+            //g.DrawString("Ticket 99".ToUpper(), new Font("Arial", 10, System.Drawing.FontStyle.Bold), new SolidBrush(Color.Black), 45f, 14f);
+            //g.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(), new Font("Arial", 8, System.Drawing.FontStyle.Bold), new SolidBrush(Color.Black), 26f, 112f);
+            //g.DrawString(n.ToString().ToUpper(), new Font("Arial", 12f, System.Drawing.FontStyle.Regular), new SolidBrush(Color.Black), 45f, 474f);
+
+            g.DrawImage(bk, 0, 0, bm.Width, bm.Height - 10);
+
 
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
@@ -354,37 +396,48 @@ namespace SVGtoIMG.Converter
 
             string UseCode = string.Format("{0}{1}{0}", "*", n);
 
-            int XPosition = 50;
-            int YPosition = 1000;
-            int _barHeight = 100;
-            const int aumento = 4;
+            float XPosition = 20;
+            int YPosition = 410;
+            const int _barHeight = 40;
+            const float aumento = 1;
 
             string CurrentSymbol = string.Empty;
 
-            for (int j = 0; j < UseCode.Length - 1; j++)
-            {
-                CurrentSymbol = UseCode.Substring(j, 1);
+            //for (int j = 0; j < UseCode.Length - 1; j++)
+            //{
+            //    CurrentSymbol = UseCode.Substring(j, 1);
 
-                if (this._encoding[CurrentSymbol] != null)
-                {
-                    string EncodedSymbol = _encoding[CurrentSymbol].ToString();
+            //    if (this._encoding[CurrentSymbol] != null)
+            //    {
+            //        string EncodedSymbol = _encoding[CurrentSymbol].ToString();
 
-                    for (int i = 0; i < EncodedSymbol.Length - 1; i++)
-                    {
-                        string CurrentCode = EncodedSymbol.Substring(i, 1);
+            //        for (int i = 0; i < EncodedSymbol.Length - 1; i++)
+            //        {
+            //            string CurrentCode = EncodedSymbol.Substring(i, 1);
 
-                        g.FillRectangle(barCodeClass.getBCSymbolColor(CurrentCode), XPosition, YPosition, barCodeClass.getBCSymbolWidth(CurrentCode) * aumento, _barHeight);
+            //            g.FillRectangle(barCodeClass.getBCSymbolColor(CurrentCode), XPosition, YPosition, barCodeClass.getBCSymbolWidth(CurrentCode) * aumento, _barHeight);
 
-                        XPosition = XPosition + barCodeClass.getBCSymbolWidth(CurrentCode) * aumento;
-                    }
+            //            XPosition = XPosition + barCodeClass.getBCSymbolWidth(CurrentCode) * aumento;
+            //        }
 
-                    g.FillRectangle(barCodeClass.getBCSymbolColor("w"), XPosition, YPosition, barCodeClass.getBCSymbolWidth("w") * aumento, _barHeight);
+            //        g.FillRectangle(barCodeClass.getBCSymbolColor("w"), XPosition, YPosition, barCodeClass.getBCSymbolWidth("w") * aumento, _barHeight);
 
-                    XPosition = XPosition + barCodeClass.getBCSymbolWidth("w") * aumento;
-                }
-            }
+            //        XPosition = XPosition + barCodeClass.getBCSymbolWidth("w") * aumento;
+            //    }
+            //}
 
-             //MemoryStream ms = new MemoryStream();
+            //g.RotateTransform(-90);
+            //g.Save();
+
+            g.FillRectangle(Brushes.White, 5, YPosition - 5, 190, 50);
+
+            Image barcode = getBarcode(1, n.ToString());
+
+            XPosition = (Width / 2) - (barcode.Width / 2);
+
+            g.DrawImage(barcode, new PointF(XPosition, YPosition));
+
+            MemoryStream ms = new MemoryStream();
 
             EncoderParameters encodingParams = new EncoderParameters();
             encodingParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 100);
@@ -393,12 +446,19 @@ namespace SVGtoIMG.Converter
             //'We will use PNG because, well it's got the best image quality for it's footprint
             ImageCodecInfo encodingInfo = barCodeClass.FindCodecInfo("PNG");
 
+            //bm.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            //bm.RotateFlip(RotateFlipType.Rotate180FlipNone);
+
             //'Save the drawing directly into the stream
             //bm.Save(ms, encodingInfo, encodingParams);
+            bm.Save(pngPath, encodingInfo, encodingParams);
 
             //'Clean-up!  Nobody likes a possible memory leaking application!
-            //g.Dispose();
-            //b.Dispose();
+            g.Dispose();
+            b.Dispose();
+            bk.Dispose();
+
+            return ms;
 
             //g.DrawImage(getBarcode(1, n), new PointF(100, 10000));
 
@@ -474,10 +534,10 @@ namespace SVGtoIMG.Converter
 
             //g.Flush();
 
-            bm.Save(pngPath, encodingInfo, encodingParams);
+            //bm.Save(pngPath, encodingInfo, encodingParams);
 
-            g.Dispose();
-            bm.Dispose();
+            //g.Dispose();
+            //bm.Dispose();
             //Bitmap bmp = new Bitmap("filename.bmp");
 
             //RectangleF rectf = new RectangleF(70, 90, 90, 50);
@@ -518,7 +578,7 @@ namespace SVGtoIMG.Converter
 
 
         //    g.DrawString("Ticket 99".ToUpper(), new Font("Arial", 0.8f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Inch), new SolidBrush(Color.Black), 229f, 532f);
-        //    g.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÃ“N DE ESTA ENTRADA".ToUpper(), new Font("Arial", 0.5f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Inch), new SolidBrush(Color.Black), 229f, 1032f);
+        //    g.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(), new Font("Arial", 0.5f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Inch), new SolidBrush(Color.Black), 229f, 1032f);
         //    g.DrawString(n.ToString().ToUpper(), new Font("Arial", 0.9f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Inch), new SolidBrush(Color.Black), 229f, 1432f);
 
         //    #region MyRegion
@@ -656,7 +716,6 @@ namespace SVGtoIMG.Converter
 
         public void SvgToImg()
         {
-
             //using (var stream = new MemoryStream())
             //{
             //    string svgText = "data here";
@@ -665,7 +724,8 @@ namespace SVGtoIMG.Converter
 
             //    var Image = sampleDoc.Draw().ToPng();
             //}
-            string path = @"C:\test\svg2.svg", pngPath = @"C:\test\barcode(1).tiff";
+
+            string path = @"C:\test\svg3.svg", pngPath = @"C:\test\CorrectSize(1)(ResizedTo300dpi).png";
 
             System.Xml.XmlDocument xml = new System.Xml.XmlDocument();
 
@@ -674,28 +734,28 @@ namespace SVGtoIMG.Converter
             XDocument document = XDocument.Load(path);
             XElement svg_Element = document.Root;
 
-            IEnumerable<XElement> test = from e1 in svg_Element.Elements("{http://www.w3.org/2000/svg}g")
-                                         select e1;
-            StringBuilder sb = new StringBuilder();
-            foreach (XElement ee in test)
-            {
-                // Get "Central" and "Capital"
-                sb.AppendLine(ee.Attribute("id").Value);
+            //IEnumerable<XElement> test = from e1 in svg_Element.Elements("{http://www.w3.org/2000/svg}g")
+            //                             select e1;
+            //StringBuilder sb = new StringBuilder();
+            //foreach (XElement ee in test)
+            //{
+            //    // Get "Central" and "Capital"
+            //    sb.AppendLine(ee.Attribute("id").Value);
 
-                IEnumerable<XElement> test2 = from e2 in ee.Elements("{http://www.w3.org/2000/svg}text")
-                                              select e2;
-                foreach (XElement ee2 in test2)
-                {
-                    sb.AppendLine("     Block No :" + ee2.Attribute("id").Value);
-                    IEnumerable<XElement> test3 = from ee3 in ee2.Elements("{http://www.w3.org/2000/svg}tspan")
-                                                  select ee3;
-                    foreach (XElement epath in test3)
-                    {
-                        sb.AppendLine("     sPath  :" + epath.Attribute("d").Value);
-                    }
-                }
-            }
-            string text = sb.ToString();
+            //    IEnumerable<XElement> test2 = from e2 in ee.Elements("{http://www.w3.org/2000/svg}text")
+            //                                  select e2;
+            //    foreach (XElement ee2 in test2)
+            //    {
+            //        sb.AppendLine("     Block No :" + ee2.Attribute("id").Value);
+            //        IEnumerable<XElement> test3 = from ee3 in ee2.Elements("{http://www.w3.org/2000/svg}tspan")
+            //                                      select ee3;
+            //        foreach (XElement epath in test3)
+            //        {
+            //            sb.AppendLine("     sPath  :" + epath.Attribute("d").Value);
+            //        }
+            //    }
+            //}
+            //string text = sb.ToString();
 
 
             xml = ToXmlDocument(document);
@@ -703,12 +763,35 @@ namespace SVGtoIMG.Converter
 
             //xml.LoadXml(imageText);
 
+            EncoderParameters encodingParams = new EncoderParameters();
+            encodingParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 100);
+            ImageCodecInfo encodingInfo = barCodeClass.FindCodecInfo("PNG");
+
+            //Bitmap bm = ResizeImage(smallBitmap, 4857, 12893);
+            //Bitmap bm = new Bitmap(200, 550, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            //    //var width = smallBitmap.Width;
+            //    //var height = smallBitmap.Height;
+
             var svgDocument = SvgDocument.Open(xml);
+            //svgDocument.Draw(bm);
+            //bm.SetResolution(300, 300);
+            //bm.Save(pngPath, encodingInfo, encodingParams);
+
+            //bm.Dispose();
+
             using (var smallBitmap = svgDocument.Draw())
             {
-                //Bitmap bm = ResizeImage(smallBitmap, 4857, 12893);
-                Bitmap bm = ResizeImage(smallBitmap, 606, 1669);
-                bm.Save(pngPath, ImageFormat.Tiff);
+
+                //EncoderParameters encodingParams = new EncoderParameters();
+                //encodingParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 100);
+                //ImageCodecInfo encodingInfo = barCodeClass.FindCodecInfo("PNG");
+
+
+
+
+                ////Bitmap bm = ResizeImage(smallBitmap, 4857, 12893);
+                Bitmap bm = ResizeImage(smallBitmap, 200, 550);
+                bm.Save(pngPath, encodingInfo, encodingParams);
 
                 //var width = smallBitmap.Width;
                 //var height = smallBitmap.Height;

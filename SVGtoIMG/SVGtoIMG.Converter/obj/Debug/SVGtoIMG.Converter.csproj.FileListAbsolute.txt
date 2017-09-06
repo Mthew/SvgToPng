@@ -31,7 +31,10 @@ C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Neodynamic.SDK.Barcod
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\PdfSharp.Charting.dll
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\PdfSharp.dll
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Svg.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.dll
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Zen.Barcode.Core.dll
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.xml
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\PdfSharp.xml
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\PdfSharp.Charting.xml
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Svg.pdb
@@ -41,6 +44,3 @@ C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\de\PdfSharp.Charting.
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.csprojResolveAssemblyReference.cache
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.dll
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.pdb
-C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.dll
-C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.pdb
-C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\SVGtoIMG.BarCode.xml

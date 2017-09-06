@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="Entities" namespace="SVGtoIMG.Data" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="Entities" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="SVGtoIMG.Data" default="true">
+      <orm:class name="TransaccionTicketsImpresion" uniqueId="c2c28a12-1546-41e0-8f48-a1879adfade1">
+        <orm:table name="transaccionTicketsImpresion" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="d970a956-760a-4eec-b313-04cf2b4cbc69" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_idTicket" property="IdTicket" behavior="readwrite" uniqueId="31fa5eb8-cbc5-471e-bdcd-9d15203c5b49" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idTicket" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_token" property="Token" behavior="readwrite" uniqueId="4d5b1214-f049-48ea-a428-c21a16ab3521" type="System.String">
+          <orm:column name="token" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_fechaImpresion" property="FechaImpresion" behavior="readwrite" uniqueId="021f8708-0cac-45c7-9ea9-62d29d1de5fd" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaImpresion" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_idEstado" property="IdEstado" behavior="readwrite" uniqueId="e0298647-e901-48cb-a90f-1fcca3db55a1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idEstado" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_ticket" property="Ticket" behavior="readwrite" uniqueId="80117741-6bfc-458e-9eed-8c82d97bb525" type="SVGtoIMG.Data.Ticket">
+          <orm:reference uniqueId="8830b735-edbf-47cb-810b-2383beee795b" association-name="TransaccionTicketsImpresionHasTicket">
+            <orm:sharedfield name="_idTicket" target-class="SVGtoIMG.Data.Ticket" target-field="_id" />
+            <orm:constraint name="FK__transacci__idTic__0F2D40CE" delete-action="dbdefaultrule" destination-table="tickets" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="TransaccionPullTicketsImpresion" uniqueId="ab4bff84-da39-4588-9746-ade9c6202a25">
+        <orm:table name="transaccionPullTicketsImpresion" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="736ae34d-7dac-45bf-9787-255f9ae3260f" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_idTicketEvento" property="IdTicketEvento" behavior="readwrite" uniqueId="4024281a-71b9-4291-b0f0-b9b90a89d9b0" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idTicketEvento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_idLocalidad" property="IdLocalidad" behavior="readwrite" uniqueId="ad15ed4f-739a-4ece-a963-c45471530a14" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idLocalidad" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_idEtapa" property="IdEtapa" behavior="readwrite" uniqueId="27e89a6f-c9a7-45d6-92e2-e3e4ebbb92fa" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idEtapa" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_imagenTicket" property="ImagenTicket" behavior="readwrite" uniqueId="5a29fb2b-551e-4c56-b876-dd3229436eb3" type="System.String">
+          <orm:column name="imagenTicket" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_fecha" property="Fecha" behavior="readwrite" uniqueId="5c17f5fe-2c5f-4355-8796-42a82cab18f6" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fecha" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_cantidad" property="Cantidad" behavior="readwrite" uniqueId="7cb058b3-bcdb-48f9-a40f-4fbdd5082270" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cantidad" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Ticket" uniqueId="aa84bc6d-756e-4283-bdd4-5ede90722090">
+        <orm:table name="tickets" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="664a3591-80c4-462f-b97e-e27a77a4702b" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" behavior="readwrite" uniqueId="aea5eee3-5492-418c-847a-df7e2fc9e575" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="numero" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_barcode" property="Barcode" behavior="readwrite" uniqueId="8539439e-e745-4aa4-9e32-1dc3afa0815e" type="System.String">
+          <orm:column name="barcode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_numericBarcode" property="NumericBarcode" behavior="readwrite" uniqueId="09b09d93-d852-4331-9e1a-236e45305c5d" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="numericBarcode" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_idticketsEvento" property="IdticketsEvento" behavior="readwrite" uniqueId="0d831d7a-088c-44a9-84f4-e2ae37ab6f00" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="idticketsEvento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_estado" property="Estado" behavior="readwrite" uniqueId="cfc16d5c-062e-4564-97cc-b4190d1d9fda" type="System.String">
+          <orm:column name="estado" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_transaccionTicketsImpresions" property="TransaccionTicketsImpresions" behavior="readwrite" uniqueId="d959c8ad-b44f-49dc-a6ec-53b847b183b5" type="SVGtoIMG.Data.TransaccionTicketsImpresion">
+          <orm:collection element-class="SVGtoIMG.Data.TransaccionTicketsImpresion" inverse-field="_ticket" order-by="" uniqueId="8830b735-edbf-47cb-810b-2383beee795b" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="transaccionTicketsImpresion">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="idTicket" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="token" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="fechaImpresion" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="idEstado" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:constraint name="FK__transacci__idTic__0F2D40CE" delete-action="dbdefaultrule" destination-table="tickets">
+          <orm:column name="idTicket" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="transaccionPullTicketsImpresion">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="idTicketEvento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="idLocalidad" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="idEtapa" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="imagenTicket" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="fecha" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="cantidad" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="tickets">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="numero" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="barcode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="numericBarcode" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="idticketsEvento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="estado" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=.;Initial Catalog=verificador;Persist Security Info=True;User ID=thew;Password=123</AppConfigConnectionString>
+    <InitialCatalog>verificador</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="c2c28a12-1546-41e0-8f48-a1879adfade1" name="TransaccionTicketsImpresion" namespace="SVGtoIMG.Data" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="d970a956-760a-4eec-b313-04cf2b4cbc69" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="021f8708-0cac-45c7-9ea9-62d29d1de5fd" name="FechaImpresion" type="DateTime" label="FechaImpresion : DateTime" nullable="true" kind="Persistent" fieldName="_fechaImpresion" />
+      <Property Id="e0298647-e901-48cb-a90f-1fcca3db55a1" name="IdEstado" type="Int32" label="IdEstado : Int32" nullable="true" kind="Persistent" fieldName="_idEstado" />
+      <Property Id="31fa5eb8-cbc5-471e-bdcd-9d15203c5b49" name="IdTicket" type="Int32" label="IdTicket : Int32" nullable="true" kind="Persistent" fieldName="_idTicket" />
+      <Property Id="4d5b1214-f049-48ea-a428-c21a16ab3521" name="Token" label="Token : String" kind="Persistent" fieldName="_token" />
+      <AssociationTargets>
+        <Association Id="8830b735-edbf-47cb-810b-2383beee795b" SourceMultiplicity="ZeroOne" name="TransaccionTicketsImpresionHasTicket">
+          <DomainClassMoniker name="/Entities/Ticket" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="9bc4cbc1-d0d0-4b86-8765-8b337629ff60">
+              <NavigationalPropertyMoniker name="/Entities/Ticket/TransaccionTicketsImpresions" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="7bf42fc1-72bf-4b23-9768-27a1bec7344c">
+              <NavigationalPropertyMoniker name="/Entities/TransaccionTicketsImpresion/Ticket" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="4f80cded-45f2-46d6-9cc2-773e033c52fb">
+          <NavigationalProperty Id="80117741-6bfc-458e-9eed-8c82d97bb525" name="Ticket" type="Ticket" label="Ticket : Ticket" nullable="true" kind="Persistent" fieldName="_ticket" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ab4bff84-da39-4588-9746-ade9c6202a25" name="TransaccionPullTicketsImpresion" namespace="SVGtoIMG.Data" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="736ae34d-7dac-45bf-9787-255f9ae3260f" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="7cb058b3-bcdb-48f9-a40f-4fbdd5082270" name="Cantidad" type="Int32" label="Cantidad : Int32" nullable="true" kind="Persistent" fieldName="_cantidad" />
+      <Property Id="5c17f5fe-2c5f-4355-8796-42a82cab18f6" name="Fecha" type="DateTime" label="Fecha : DateTime" nullable="true" kind="Persistent" fieldName="_fecha" />
+      <Property Id="27e89a6f-c9a7-45d6-92e2-e3e4ebbb92fa" name="IdEtapa" type="Int32" label="IdEtapa : Int32" nullable="true" kind="Persistent" fieldName="_idEtapa" />
+      <Property Id="ad15ed4f-739a-4ece-a963-c45471530a14" name="IdLocalidad" type="Int32" label="IdLocalidad : Int32" nullable="true" kind="Persistent" fieldName="_idLocalidad" />
+      <Property Id="4024281a-71b9-4291-b0f0-b9b90a89d9b0" name="IdTicketEvento" type="Int32" label="IdTicketEvento : Int32" nullable="true" kind="Persistent" fieldName="_idTicketEvento" />
+      <Property Id="5a29fb2b-551e-4c56-b876-dd3229436eb3" name="ImagenTicket" label="ImagenTicket : String" kind="Persistent" fieldName="_imagenTicket" />
+    </DomainClass>
+    <DomainClass Id="aa84bc6d-756e-4283-bdd4-5ede90722090" name="Ticket" namespace="SVGtoIMG.Data" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="664a3591-80c4-462f-b97e-e27a77a4702b" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="8539439e-e745-4aa4-9e32-1dc3afa0815e" name="Barcode" label="Barcode : String" kind="Persistent" fieldName="_barcode" />
+      <Property Id="cfc16d5c-062e-4564-97cc-b4190d1d9fda" name="Estado" label="Estado : String" kind="Persistent" fieldName="_estado" />
+      <Property Id="0d831d7a-088c-44a9-84f4-e2ae37ab6f00" name="IdticketsEvento" type="Int32" label="IdticketsEvento : Int32" nullable="true" kind="Persistent" fieldName="_idticketsEvento" />
+      <Property Id="09b09d93-d852-4331-9e1a-236e45305c5d" name="NumericBarcode" type="Int64" label="NumericBarcode : Int64" nullable="true" kind="Persistent" fieldName="_numericBarcode" />
+      <Property Id="aea5eee3-5492-418c-847a-df7e2fc9e575" name="Numero" type="Int32" label="Numero : Int32" nullable="true" kind="Persistent" fieldName="_numero" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="c056fc48-dcd9-4c57-bfd1-61741e130e1d">
+          <NavigationalProperty Id="d959c8ad-b44f-49dc-a6ec-53b847b183b5" name="TransaccionTicketsImpresions" type="IList&lt;TransaccionTicketsImpresion&gt;" label="TransaccionTicketsImpresions : IList&lt;TransaccionTicketsImpresion&gt;" nullable="true" kind="Persistent" fieldName="_transaccionTicketsImpresions" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="c38a369b-2953-440c-9aa3-da73770bb30c">
+      <domainContainer name="Entities" namespace="SVGtoIMG.Data" showPropertiesCompartment="true">
+        <entitySetProperty name="TransaccionTicketsImpresions" namespace="SVGtoIMG.Data" type="TransaccionTicketsImpresion" label="TransaccionTicketsImpresions : IQueryable&lt;SVGtoIMG.Data.TransaccionTicketsImpresion&gt;" />
+        <entitySetProperty name="TransaccionPullTicketsImpresions" namespace="SVGtoIMG.Data" type="TransaccionPullTicketsImpresion" label="TransaccionPullTicketsImpresions : IQueryable&lt;SVGtoIMG.Data.TransaccionPullTicketsImpresion&gt;" />
+        <entitySetProperty name="Tickets" namespace="SVGtoIMG.Data" type="Ticket" label="Tickets : IQueryable&lt;SVGtoIMG.Data.Ticket&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
