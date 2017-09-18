@@ -365,8 +365,8 @@ namespace SVGtoIMG.Converter
             //}
 
             //Bitmap bm = new Bitmap(606, 1669);
-            Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppGrayScale);
-            //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//saca menos cuadros
+            //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppGrayScale);
+            Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//saca menos cuadros
             //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format32bppArgb);//Original
 
             Rectangle canvas = new Rectangle(0, 0, Width, Heigth);
@@ -447,11 +447,11 @@ namespace SVGtoIMG.Converter
             ImageCodecInfo encodingInfo = barCodeClass.FindCodecInfo("PNG");
 
             //bm.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            //bm.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            bm.RotateFlip(RotateFlipType.Rotate180FlipNone);
 
             //'Save the drawing directly into the stream
-            //bm.Save(ms, encodingInfo, encodingParams);
-            bm.Save(pngPath, encodingInfo, encodingParams);
+            bm.Save(ms, encodingInfo, encodingParams);
+            //bm.Save(pngPath, encodingInfo, encodingParams);
 
             //'Clean-up!  Nobody likes a possible memory leaking application!
             g.Dispose();

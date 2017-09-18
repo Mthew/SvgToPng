@@ -42,6 +42,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.OpenAccess, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -81,6 +83,10 @@
     <ProjectReference Include="..\SVGtoIMG.Converter\SVGtoIMG.Converter.csproj">
       <Project>{50ffc8f5-92ea-44ee-b7e8-648eaaa9f6b6}</Project>
       <Name>SVGtoIMG.Converter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SVGtoIMG.Data\SVGtoIMG.Data.csproj">
+      <Project>{4488a500-e592-4ad6-98b6-309d9140f212}</Project>
+      <Name>SVGtoIMG.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

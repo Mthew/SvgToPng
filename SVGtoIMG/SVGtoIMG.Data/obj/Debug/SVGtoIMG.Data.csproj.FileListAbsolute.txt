@@ -6,3 +6,11 @@ C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Data\bin\Debug\Telerik.OpenAccess.35.Exte
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.csprojResolveAssemblyReference.cache
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.dll
 C:\D\SourceCode\test\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.pdb
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\bin\Debug\SVGtoIMG.Data.dll.config
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\bin\Debug\SVGtoIMG.Data.dll
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\bin\Debug\SVGtoIMG.Data.pdb
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.dll
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.pdb
+C:\D\SourceCode\Git\SvgToPng\SVGtoIMG\SVGtoIMG.Data\obj\Debug\SVGtoIMG.Data.csprojResolveAssemblyReference.cache

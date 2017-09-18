@@ -50,6 +50,38 @@ namespace SVGtoIMG.Data
 			:base(connection, backendConfiguration, metadataSource)
 		{ }
 			
+		public IQueryable<Venue> Venues 
+		{
+			get
+			{
+				return this.GetAll<Venue>();
+			}
+		}
+		
+		public IQueryable<UVT> UVTs 
+		{
+			get
+			{
+				return this.GetAll<UVT>();
+			}
+		}
+		
+		public IQueryable<Usuarios_portal> Usuarios_portals 
+		{
+			get
+			{
+				return this.GetAll<Usuarios_portal>();
+			}
+		}
+		
+		public IQueryable<Usuario> Usuarios 
+		{
+			get
+			{
+				return this.GetAll<Usuario>();
+			}
+		}
+		
 		public IQueryable<TransaccionTicketsImpresion> TransaccionTicketsImpresions 
 		{
 			get
@@ -66,11 +98,363 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
+		public IQueryable<TipoUsuario> TipoUsuarios 
+		{
+			get
+			{
+				return this.GetAll<TipoUsuario>();
+			}
+		}
+		
+		public IQueryable<TipoServicio> TipoServicios 
+		{
+			get
+			{
+				return this.GetAll<TipoServicio>();
+			}
+		}
+		
+		public IQueryable<TipoRecaudo> TipoRecaudos 
+		{
+			get
+			{
+				return this.GetAll<TipoRecaudo>();
+			}
+		}
+		
+		public IQueryable<Tipopersona> Tipopersonas 
+		{
+			get
+			{
+				return this.GetAll<Tipopersona>();
+			}
+		}
+		
+		public IQueryable<Tipopago> Tipopagos 
+		{
+			get
+			{
+				return this.GetAll<Tipopago>();
+			}
+		}
+		
+		public IQueryable<TipoNumeracion> TipoNumeracions 
+		{
+			get
+			{
+				return this.GetAll<TipoNumeracion>();
+			}
+		}
+		
+		public IQueryable<Tipomoneda> Tipomonedas 
+		{
+			get
+			{
+				return this.GetAll<Tipomoneda>();
+			}
+		}
+		
+		public IQueryable<TipoLocalidad> TipoLocalidads 
+		{
+			get
+			{
+				return this.GetAll<TipoLocalidad>();
+			}
+		}
+		
+		public IQueryable<TipoEvento> TipoEventos 
+		{
+			get
+			{
+				return this.GetAll<TipoEvento>();
+			}
+		}
+		
+		public IQueryable<Tipoempresa> Tipoempresas 
+		{
+			get
+			{
+				return this.GetAll<Tipoempresa>();
+			}
+		}
+		
+		public IQueryable<Tipodocumento> Tipodocumentos 
+		{
+			get
+			{
+				return this.GetAll<Tipodocumento>();
+			}
+		}
+		
+		public IQueryable<TicketsEvento> TicketsEventos 
+		{
+			get
+			{
+				return this.GetAll<TicketsEvento>();
+			}
+		}
+		
+		public IQueryable<TicketsEtapa> TicketsEtapas 
+		{
+			get
+			{
+				return this.GetAll<TicketsEtapa>();
+			}
+		}
+		
 		public IQueryable<Ticket> Tickets 
 		{
 			get
 			{
 				return this.GetAll<Ticket>();
+			}
+		}
+		
+		public IQueryable<Silla> Sillas 
+		{
+			get
+			{
+				return this.GetAll<Silla>();
+			}
+		}
+		
+		public IQueryable<ServiciosEvento> ServiciosEventos 
+		{
+			get
+			{
+				return this.GetAll<ServiciosEvento>();
+			}
+		}
+		
+		public IQueryable<Roles_usuario> Roles_usuarios 
+		{
+			get
+			{
+				return this.GetAll<Roles_usuario>();
+			}
+		}
+		
+		public IQueryable<Role> Roles 
+		{
+			get
+			{
+				return this.GetAll<Role>();
+			}
+		}
+		
+		public IQueryable<Permisos_rol> Permisos_rols 
+		{
+			get
+			{
+				return this.GetAll<Permisos_rol>();
+			}
+		}
+		
+		public IQueryable<Permiso> Permisos 
+		{
+			get
+			{
+				return this.GetAll<Permiso>();
+			}
+		}
+		
+		public IQueryable<Paise> Paises 
+		{
+			get
+			{
+				return this.GetAll<Paise>();
+			}
+		}
+		
+		public IQueryable<MesasFilasSilla> MesasFilasSillas 
+		{
+			get
+			{
+				return this.GetAll<MesasFilasSilla>();
+			}
+		}
+		
+		public IQueryable<MesasFila> MesasFilas 
+		{
+			get
+			{
+				return this.GetAll<MesasFila>();
+			}
+		}
+		
+		public IQueryable<MapasVenue> MapasVenues 
+		{
+			get
+			{
+				return this.GetAll<MapasVenue>();
+			}
+		}
+		
+		public IQueryable<Mapa> Mapas 
+		{
+			get
+			{
+				return this.GetAll<Mapa>();
+			}
+		}
+		
+		public IQueryable<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas 
+		{
+			get
+			{
+				return this.GetAll<LocalidadMesasFilasSilla>();
+			}
+		}
+		
+		public IQueryable<LocalidadesVenue> LocalidadesVenues 
+		{
+			get
+			{
+				return this.GetAll<LocalidadesVenue>();
+			}
+		}
+		
+		public IQueryable<Localidad> Localidads 
+		{
+			get
+			{
+				return this.GetAll<Localidad>();
+			}
+		}
+		
+		public IQueryable<ImpuestosEvento> ImpuestosEventos 
+		{
+			get
+			{
+				return this.GetAll<ImpuestosEvento>();
+			}
+		}
+		
+		public IQueryable<Impuesto> Impuestos 
+		{
+			get
+			{
+				return this.GetAll<Impuesto>();
+			}
+		}
+		
+		public IQueryable<Genero> Generos 
+		{
+			get
+			{
+				return this.GetAll<Genero>();
+			}
+		}
+		
+		public IQueryable<FuncionesEvento> FuncionesEventos 
+		{
+			get
+			{
+				return this.GetAll<FuncionesEvento>();
+			}
+		}
+		
+		public IQueryable<Evento> Eventos 
+		{
+			get
+			{
+				return this.GetAll<Evento>();
+			}
+		}
+		
+		public IQueryable<EtapasVentaEvento> EtapasVentaEventos 
+		{
+			get
+			{
+				return this.GetAll<EtapasVentaEvento>();
+			}
+		}
+		
+		public IQueryable<EstadoImpresion> EstadoImpresions 
+		{
+			get
+			{
+				return this.GetAll<EstadoImpresion>();
+			}
+		}
+		
+		public IQueryable<Empresario> Empresarios 
+		{
+			get
+			{
+				return this.GetAll<Empresario>();
+			}
+		}
+		
+		public IQueryable<DireccionesCliente> DireccionesClientes 
+		{
+			get
+			{
+				return this.GetAll<DireccionesCliente>();
+			}
+		}
+		
+		public IQueryable<Departamento> Departamentos 
+		{
+			get
+			{
+				return this.GetAll<Departamento>();
+			}
+		}
+		
+		public IQueryable<Consumo> Consumos 
+		{
+			get
+			{
+				return this.GetAll<Consumo>();
+			}
+		}
+		
+		public IQueryable<Cliente> Clientes 
+		{
+			get
+			{
+				return this.GetAll<Cliente>();
+			}
+		}
+		
+		public IQueryable<Ciudade> Ciudades 
+		{
+			get
+			{
+				return this.GetAll<Ciudade>();
+			}
+		}
+		
+		public IQueryable<CategoriasEvento> CategoriasEventos 
+		{
+			get
+			{
+				return this.GetAll<CategoriasEvento>();
+			}
+		}
+		
+		public IQueryable<Categoria> Categorias 
+		{
+			get
+			{
+				return this.GetAll<Categoria>();
+			}
+		}
+		
+		public IQueryable<CanalesVentaEvento> CanalesVentaEventos 
+		{
+			get
+			{
+				return this.GetAll<CanalesVentaEvento>();
+			}
+		}
+		
+		public IQueryable<CanalesVentum> CanalesVenta 
+		{
+			get
+			{
+				return this.GetAll<CanalesVentum>();
 			}
 		}
 		
@@ -95,6 +479,22 @@ namespace SVGtoIMG.Data
 	
 	public interface IEntitiesUnitOfWork : IUnitOfWork
 	{
+		IQueryable<Venue> Venues
+		{
+			get;
+		}
+		IQueryable<UVT> UVTs
+		{
+			get;
+		}
+		IQueryable<Usuarios_portal> Usuarios_portals
+		{
+			get;
+		}
+		IQueryable<Usuario> Usuarios
+		{
+			get;
+		}
 		IQueryable<TransaccionTicketsImpresion> TransaccionTicketsImpresions
 		{
 			get;
@@ -103,10 +503,5571 @@ namespace SVGtoIMG.Data
 		{
 			get;
 		}
+		IQueryable<TipoUsuario> TipoUsuarios
+		{
+			get;
+		}
+		IQueryable<TipoServicio> TipoServicios
+		{
+			get;
+		}
+		IQueryable<TipoRecaudo> TipoRecaudos
+		{
+			get;
+		}
+		IQueryable<Tipopersona> Tipopersonas
+		{
+			get;
+		}
+		IQueryable<Tipopago> Tipopagos
+		{
+			get;
+		}
+		IQueryable<TipoNumeracion> TipoNumeracions
+		{
+			get;
+		}
+		IQueryable<Tipomoneda> Tipomonedas
+		{
+			get;
+		}
+		IQueryable<TipoLocalidad> TipoLocalidads
+		{
+			get;
+		}
+		IQueryable<TipoEvento> TipoEventos
+		{
+			get;
+		}
+		IQueryable<Tipoempresa> Tipoempresas
+		{
+			get;
+		}
+		IQueryable<Tipodocumento> Tipodocumentos
+		{
+			get;
+		}
+		IQueryable<TicketsEvento> TicketsEventos
+		{
+			get;
+		}
+		IQueryable<TicketsEtapa> TicketsEtapas
+		{
+			get;
+		}
 		IQueryable<Ticket> Tickets
 		{
 			get;
 		}
+		IQueryable<Silla> Sillas
+		{
+			get;
+		}
+		IQueryable<ServiciosEvento> ServiciosEventos
+		{
+			get;
+		}
+		IQueryable<Roles_usuario> Roles_usuarios
+		{
+			get;
+		}
+		IQueryable<Role> Roles
+		{
+			get;
+		}
+		IQueryable<Permisos_rol> Permisos_rols
+		{
+			get;
+		}
+		IQueryable<Permiso> Permisos
+		{
+			get;
+		}
+		IQueryable<Paise> Paises
+		{
+			get;
+		}
+		IQueryable<MesasFilasSilla> MesasFilasSillas
+		{
+			get;
+		}
+		IQueryable<MesasFila> MesasFilas
+		{
+			get;
+		}
+		IQueryable<MapasVenue> MapasVenues
+		{
+			get;
+		}
+		IQueryable<Mapa> Mapas
+		{
+			get;
+		}
+		IQueryable<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas
+		{
+			get;
+		}
+		IQueryable<LocalidadesVenue> LocalidadesVenues
+		{
+			get;
+		}
+		IQueryable<Localidad> Localidads
+		{
+			get;
+		}
+		IQueryable<ImpuestosEvento> ImpuestosEventos
+		{
+			get;
+		}
+		IQueryable<Impuesto> Impuestos
+		{
+			get;
+		}
+		IQueryable<Genero> Generos
+		{
+			get;
+		}
+		IQueryable<FuncionesEvento> FuncionesEventos
+		{
+			get;
+		}
+		IQueryable<Evento> Eventos
+		{
+			get;
+		}
+		IQueryable<EtapasVentaEvento> EtapasVentaEventos
+		{
+			get;
+		}
+		IQueryable<EstadoImpresion> EstadoImpresions
+		{
+			get;
+		}
+		IQueryable<Empresario> Empresarios
+		{
+			get;
+		}
+		IQueryable<DireccionesCliente> DireccionesClientes
+		{
+			get;
+		}
+		IQueryable<Departamento> Departamentos
+		{
+			get;
+		}
+		IQueryable<Consumo> Consumos
+		{
+			get;
+		}
+		IQueryable<Cliente> Clientes
+		{
+			get;
+		}
+		IQueryable<Ciudade> Ciudades
+		{
+			get;
+		}
+		IQueryable<CategoriasEvento> CategoriasEventos
+		{
+			get;
+		}
+		IQueryable<Categoria> Categorias
+		{
+			get;
+		}
+		IQueryable<CanalesVentaEvento> CanalesVentaEventos
+		{
+			get;
+		}
+		IQueryable<CanalesVentum> CanalesVenta
+		{
+			get;
+		}
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Venue
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _direccion;
+		public virtual string Direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				this._direccion = value;
+			}
+		}
+		
+		private int? _ciudad_id;
+		public virtual int? Ciudad_id
+		{
+			get
+			{
+				return this._ciudad_id;
+			}
+			set
+			{
+				this._ciudad_id = value;
+			}
+		}
+		
+		private string _telefono;
+		public virtual string Telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				this._telefono = value;
+			}
+		}
+		
+		private string _email;
+		public virtual string Email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				this._email = value;
+			}
+		}
+		
+		private string _foto;
+		public virtual string Foto
+		{
+			get
+			{
+				return this._foto;
+			}
+			set
+			{
+				this._foto = value;
+			}
+		}
+		
+		private int? _aforo;
+		public virtual int? Aforo
+		{
+			get
+			{
+				return this._aforo;
+			}
+			set
+			{
+				this._aforo = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private string _latitud;
+		public virtual string Latitud
+		{
+			get
+			{
+				return this._latitud;
+			}
+			set
+			{
+				this._latitud = value;
+			}
+		}
+		
+		private string _longitud;
+		public virtual string Longitud
+		{
+			get
+			{
+				return this._longitud;
+			}
+			set
+			{
+				this._longitud = value;
+			}
+		}
+		
+		private Ciudade _ciudade;
+		public virtual Ciudade Ciudade
+		{
+			get
+			{
+				return this._ciudade;
+			}
+			set
+			{
+				this._ciudade = value;
+			}
+		}
+		
+		private IList<MapasVenue> _mapasVenues = new List<MapasVenue>();
+		public virtual IList<MapasVenue> MapasVenues
+		{
+			get
+			{
+				return this._mapasVenues;
+			}
+		}
+		
+		private IList<LocalidadesVenue> _localidadesVenues = new List<LocalidadesVenue>();
+		public virtual IList<LocalidadesVenue> LocalidadesVenues
+		{
+			get
+			{
+				return this._localidadesVenues;
+			}
+		}
+		
+		private IList<Evento> _eventos = new List<Evento>();
+		public virtual IList<Evento> Eventos
+		{
+			get
+			{
+				return this._eventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class UVT
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int _anio;
+		public virtual int Anio
+		{
+			get
+			{
+				return this._anio;
+			}
+			set
+			{
+				this._anio = value;
+			}
+		}
+		
+		private decimal _valor;
+		public virtual decimal Valor
+		{
+			get
+			{
+				return this._valor;
+			}
+			set
+			{
+				this._valor = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Usuarios_portal
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _contrasena;
+		public virtual string Contrasena
+		{
+			get
+			{
+				return this._contrasena;
+			}
+			set
+			{
+				this._contrasena = value;
+			}
+		}
+		
+		private bool _bloqueado;
+		public virtual bool Bloqueado
+		{
+			get
+			{
+				return this._bloqueado;
+			}
+			set
+			{
+				this._bloqueado = value;
+			}
+		}
+		
+		private string _email;
+		public virtual string Email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				this._email = value;
+			}
+		}
+		
+		private string _nombres;
+		public virtual string Nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				this._nombres = value;
+			}
+		}
+		
+		private string _apellidos;
+		public virtual string Apellidos
+		{
+			get
+			{
+				return this._apellidos;
+			}
+			set
+			{
+				this._apellidos = value;
+			}
+		}
+		
+		private DateTime? _fecha;
+		public virtual DateTime? Fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				this._fecha = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Usuario
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _contrasena;
+		public virtual string Contrasena
+		{
+			get
+			{
+				return this._contrasena;
+			}
+			set
+			{
+				this._contrasena = value;
+			}
+		}
+		
+		private bool _bloqueado;
+		public virtual bool Bloqueado
+		{
+			get
+			{
+				return this._bloqueado;
+			}
+			set
+			{
+				this._bloqueado = value;
+			}
+		}
+		
+		private string _email;
+		public virtual string Email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				this._email = value;
+			}
+		}
+		
+		private string _nombres;
+		public virtual string Nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				this._nombres = value;
+			}
+		}
+		
+		private string _apellidos;
+		public virtual string Apellidos
+		{
+			get
+			{
+				return this._apellidos;
+			}
+			set
+			{
+				this._apellidos = value;
+			}
+		}
+		
+		private string _direccion;
+		public virtual string Direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				this._direccion = value;
+			}
+		}
+		
+		private string _telefono;
+		public virtual string Telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				this._telefono = value;
+			}
+		}
+		
+		private DateTime? _fecha;
+		public virtual DateTime? Fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				this._fecha = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private int? _tipoUsuario_id;
+		public virtual int? TipoUsuario_id
+		{
+			get
+			{
+				return this._tipoUsuario_id;
+			}
+			set
+			{
+				this._tipoUsuario_id = value;
+			}
+		}
+		
+		private TipoUsuario _tipoUsuario;
+		public virtual TipoUsuario TipoUsuario
+		{
+			get
+			{
+				return this._tipoUsuario;
+			}
+			set
+			{
+				this._tipoUsuario = value;
+			}
+		}
+		
+		private IList<Roles_usuario> _roles_usuarios = new List<Roles_usuario>();
+		public virtual IList<Roles_usuario> Roles_usuarios
+		{
+			get
+			{
+				return this._roles_usuarios;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TransaccionTicketsImpresion
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idTicket;
+		public virtual int? IdTicket
+		{
+			get
+			{
+				return this._idTicket;
+			}
+			set
+			{
+				this._idTicket = value;
+			}
+		}
+		
+		private string _token;
+		public virtual string Token
+		{
+			get
+			{
+				return this._token;
+			}
+			set
+			{
+				this._token = value;
+			}
+		}
+		
+		private DateTime? _fechaImpresion;
+		public virtual DateTime? FechaImpresion
+		{
+			get
+			{
+				return this._fechaImpresion;
+			}
+			set
+			{
+				this._fechaImpresion = value;
+			}
+		}
+		
+		private int? _idEstado;
+		public virtual int? IdEstado
+		{
+			get
+			{
+				return this._idEstado;
+			}
+			set
+			{
+				this._idEstado = value;
+			}
+		}
+		
+		private EstadoImpresion _estadoImpresion;
+		public virtual EstadoImpresion EstadoImpresion
+		{
+			get
+			{
+				return this._estadoImpresion;
+			}
+			set
+			{
+				this._estadoImpresion = value;
+			}
+		}
+		
+		private Ticket _ticket;
+		public virtual Ticket Ticket
+		{
+			get
+			{
+				return this._ticket;
+			}
+			set
+			{
+				this._ticket = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TransaccionPullTicketsImpresion
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idTicketEvento;
+		public virtual int? IdTicketEvento
+		{
+			get
+			{
+				return this._idTicketEvento;
+			}
+			set
+			{
+				this._idTicketEvento = value;
+			}
+		}
+		
+		private int? _idLocalidad;
+		public virtual int? IdLocalidad
+		{
+			get
+			{
+				return this._idLocalidad;
+			}
+			set
+			{
+				this._idLocalidad = value;
+			}
+		}
+		
+		private int? _idEtapa;
+		public virtual int? IdEtapa
+		{
+			get
+			{
+				return this._idEtapa;
+			}
+			set
+			{
+				this._idEtapa = value;
+			}
+		}
+		
+		private string _imagenTicket;
+		public virtual string ImagenTicket
+		{
+			get
+			{
+				return this._imagenTicket;
+			}
+			set
+			{
+				this._imagenTicket = value;
+			}
+		}
+		
+		private DateTime? _fecha;
+		public virtual DateTime? Fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				this._fecha = value;
+			}
+		}
+		
+		private int? _cantidad;
+		public virtual int? Cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				this._cantidad = value;
+			}
+		}
+		
+		private TicketsEvento _ticketsEvento;
+		public virtual TicketsEvento TicketsEvento
+		{
+			get
+			{
+				return this._ticketsEvento;
+			}
+			set
+			{
+				this._ticketsEvento = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoUsuario
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _code;
+		public virtual string Code
+		{
+			get
+			{
+				return this._code;
+			}
+			set
+			{
+				this._code = value;
+			}
+		}
+		
+		private string _description;
+		public virtual string Description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				this._description = value;
+			}
+		}
+		
+		private DateTime? _createDate;
+		public virtual DateTime? CreateDate
+		{
+			get
+			{
+				return this._createDate;
+			}
+			set
+			{
+				this._createDate = value;
+			}
+		}
+		
+		private IList<Usuario> _usuarios = new List<Usuario>();
+		public virtual IList<Usuario> Usuarios
+		{
+			get
+			{
+				return this._usuarios;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoServicio
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<ServiciosEvento> _serviciosEventos = new List<ServiciosEvento>();
+		public virtual IList<ServiciosEvento> ServiciosEventos
+		{
+			get
+			{
+				return this._serviciosEventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoRecaudo
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Evento> _eventos = new List<Evento>();
+		public virtual IList<Evento> Eventos
+		{
+			get
+			{
+				return this._eventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Tipopersona
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Empresario> _empresarios = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios
+		{
+			get
+			{
+				return this._empresarios;
+			}
+		}
+		
+		private IList<Cliente> _clientes = new List<Cliente>();
+		public virtual IList<Cliente> Clientes
+		{
+			get
+			{
+				return this._clientes;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Tipopago
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoNumeracion
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private IList<Silla> _sillas = new List<Silla>();
+		public virtual IList<Silla> Sillas
+		{
+			get
+			{
+				return this._sillas;
+			}
+		}
+		
+		private IList<MesasFila> _mesasFilas = new List<MesasFila>();
+		public virtual IList<MesasFila> MesasFilas
+		{
+			get
+			{
+				return this._mesasFilas;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Tipomoneda
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private string _simbolo;
+		public virtual string Simbolo
+		{
+			get
+			{
+				return this._simbolo;
+			}
+			set
+			{
+				this._simbolo = value;
+			}
+		}
+		
+		private int _decimales;
+		public virtual int Decimales
+		{
+			get
+			{
+				return this._decimales;
+			}
+			set
+			{
+				this._decimales = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoLocalidad
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private IList<Localidad> _localidads = new List<Localidad>();
+		public virtual IList<Localidad> Localidads
+		{
+			get
+			{
+				return this._localidads;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TipoEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Evento> _eventos = new List<Evento>();
+		public virtual IList<Evento> Eventos
+		{
+			get
+			{
+				return this._eventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Tipoempresa
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Empresario> _empresarios = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios
+		{
+			get
+			{
+				return this._empresarios;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Tipodocumento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Empresario> _empresarios = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios
+		{
+			get
+			{
+				return this._empresarios;
+			}
+		}
+		
+		private IList<Empresario> _empresarios1 = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios1
+		{
+			get
+			{
+				return this._empresarios1;
+			}
+		}
+		
+		private IList<Cliente> _clientes = new List<Cliente>();
+		public virtual IList<Cliente> Clientes
+		{
+			get
+			{
+				return this._clientes;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TicketsEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idEvento;
+		public virtual int? IdEvento
+		{
+			get
+			{
+				return this._idEvento;
+			}
+			set
+			{
+				this._idEvento = value;
+			}
+		}
+		
+		private int? _cantidad;
+		public virtual int? Cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				this._cantidad = value;
+			}
+		}
+		
+		private int? _inicioNumeracion;
+		public virtual int? InicioNumeracion
+		{
+			get
+			{
+				return this._inicioNumeracion;
+			}
+			set
+			{
+				this._inicioNumeracion = value;
+			}
+		}
+		
+		private string _jsonCanvas;
+		public virtual string JsonCanvas
+		{
+			get
+			{
+				return this._jsonCanvas;
+			}
+			set
+			{
+				this._jsonCanvas = value;
+			}
+		}
+		
+		private int? _finNumeracion;
+		public virtual int? FinNumeracion
+		{
+			get
+			{
+				return this._finNumeracion;
+			}
+			set
+			{
+				this._finNumeracion = value;
+			}
+		}
+		
+		private string _ticketType;
+		public virtual string TicketType
+		{
+			get
+			{
+				return this._ticketType;
+			}
+			set
+			{
+				this._ticketType = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+		private IList<TransaccionPullTicketsImpresion> _transaccionPullTicketsImpresions = new List<TransaccionPullTicketsImpresion>();
+		public virtual IList<TransaccionPullTicketsImpresion> TransaccionPullTicketsImpresions
+		{
+			get
+			{
+				return this._transaccionPullTicketsImpresions;
+			}
+		}
+		
+		private IList<TicketsEtapa> _ticketsEtapas = new List<TicketsEtapa>();
+		public virtual IList<TicketsEtapa> TicketsEtapas
+		{
+			get
+			{
+				return this._ticketsEtapas;
+			}
+		}
+		
+		private IList<Ticket> _tickets = new List<Ticket>();
+		public virtual IList<Ticket> Tickets
+		{
+			get
+			{
+				return this._tickets;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class TicketsEtapa
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int _idLocalidad;
+		public virtual int IdLocalidad
+		{
+			get
+			{
+				return this._idLocalidad;
+			}
+			set
+			{
+				this._idLocalidad = value;
+			}
+		}
+		
+		private int _idEtapa;
+		public virtual int IdEtapa
+		{
+			get
+			{
+				return this._idEtapa;
+			}
+			set
+			{
+				this._idEtapa = value;
+			}
+		}
+		
+		private int _idTicketsEvento;
+		public virtual int IdTicketsEvento
+		{
+			get
+			{
+				return this._idTicketsEvento;
+			}
+			set
+			{
+				this._idTicketsEvento = value;
+			}
+		}
+		
+		private int _cantidad;
+		public virtual int Cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				this._cantidad = value;
+			}
+		}
+		
+		private decimal _precio;
+		public virtual decimal Precio
+		{
+			get
+			{
+				return this._precio;
+			}
+			set
+			{
+				this._precio = value;
+			}
+		}
+		
+		private EtapasVentaEvento _etapasVentaEvento;
+		public virtual EtapasVentaEvento EtapasVentaEvento
+		{
+			get
+			{
+				return this._etapasVentaEvento;
+			}
+			set
+			{
+				this._etapasVentaEvento = value;
+			}
+		}
+		
+		private TicketsEvento _ticketsEvento;
+		public virtual TicketsEvento TicketsEvento
+		{
+			get
+			{
+				return this._ticketsEvento;
+			}
+			set
+			{
+				this._ticketsEvento = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Ticket
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _numero;
+		public virtual int? Numero
+		{
+			get
+			{
+				return this._numero;
+			}
+			set
+			{
+				this._numero = value;
+			}
+		}
+		
+		private string _barcode;
+		public virtual string Barcode
+		{
+			get
+			{
+				return this._barcode;
+			}
+			set
+			{
+				this._barcode = value;
+			}
+		}
+		
+		private long? _numericBarcode;
+		public virtual long? NumericBarcode
+		{
+			get
+			{
+				return this._numericBarcode;
+			}
+			set
+			{
+				this._numericBarcode = value;
+			}
+		}
+		
+		private int? _idticketsEvento;
+		public virtual int? IdticketsEvento
+		{
+			get
+			{
+				return this._idticketsEvento;
+			}
+			set
+			{
+				this._idticketsEvento = value;
+			}
+		}
+		
+		private string _estado;
+		public virtual string Estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				this._estado = value;
+			}
+		}
+		
+		private TicketsEvento _ticketsEvento;
+		public virtual TicketsEvento TicketsEvento
+		{
+			get
+			{
+				return this._ticketsEvento;
+			}
+			set
+			{
+				this._ticketsEvento = value;
+			}
+		}
+		
+		private IList<TransaccionTicketsImpresion> _transaccionTicketsImpresions = new List<TransaccionTicketsImpresion>();
+		public virtual IList<TransaccionTicketsImpresion> TransaccionTicketsImpresions
+		{
+			get
+			{
+				return this._transaccionTicketsImpresions;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Silla
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _label;
+		public virtual string Label
+		{
+			get
+			{
+				return this._label;
+			}
+			set
+			{
+				this._label = value;
+			}
+		}
+		
+		private string _orientacion;
+		public virtual string Orientacion
+		{
+			get
+			{
+				return this._orientacion;
+			}
+			set
+			{
+				this._orientacion = value;
+			}
+		}
+		
+		private string _inicioNumeracion;
+		public virtual string InicioNumeracion
+		{
+			get
+			{
+				return this._inicioNumeracion;
+			}
+			set
+			{
+				this._inicioNumeracion = value;
+			}
+		}
+		
+		private int? _idTipoNumracion;
+		public virtual int? IdTipoNumracion
+		{
+			get
+			{
+				return this._idTipoNumracion;
+			}
+			set
+			{
+				this._idTipoNumracion = value;
+			}
+		}
+		
+		private TipoNumeracion _tipoNumeracion;
+		public virtual TipoNumeracion TipoNumeracion
+		{
+			get
+			{
+				return this._tipoNumeracion;
+			}
+			set
+			{
+				this._tipoNumeracion = value;
+			}
+		}
+		
+		private IList<MesasFilasSilla> _mesasFilasSillas = new List<MesasFilasSilla>();
+		public virtual IList<MesasFilasSilla> MesasFilasSillas
+		{
+			get
+			{
+				return this._mesasFilasSillas;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class ServiciosEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idevento;
+		public virtual int? Idevento
+		{
+			get
+			{
+				return this._idevento;
+			}
+			set
+			{
+				this._idevento = value;
+			}
+		}
+		
+		private int? _idservicio;
+		public virtual int? Idservicio
+		{
+			get
+			{
+				return this._idservicio;
+			}
+			set
+			{
+				this._idservicio = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+		private TipoServicio _tipoServicio;
+		public virtual TipoServicio TipoServicio
+		{
+			get
+			{
+				return this._tipoServicio;
+			}
+			set
+			{
+				this._tipoServicio = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Roles_usuario
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int _idrol;
+		public virtual int Idrol
+		{
+			get
+			{
+				return this._idrol;
+			}
+			set
+			{
+				this._idrol = value;
+			}
+		}
+		
+		private int _idusuario;
+		public virtual int Idusuario
+		{
+			get
+			{
+				return this._idusuario;
+			}
+			set
+			{
+				this._idusuario = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private Role _role;
+		public virtual Role Role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				this._role = value;
+			}
+		}
+		
+		private Usuario _usuario;
+		public virtual Usuario Usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				this._usuario = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Role
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Roles_usuario> _roles_usuarios = new List<Roles_usuario>();
+		public virtual IList<Roles_usuario> Roles_usuarios
+		{
+			get
+			{
+				return this._roles_usuarios;
+			}
+		}
+		
+		private IList<Permisos_rol> _permisos_rols = new List<Permisos_rol>();
+		public virtual IList<Permisos_rol> Permisos_rols
+		{
+			get
+			{
+				return this._permisos_rols;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Permisos_rol
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int _idpermiso;
+		public virtual int Idpermiso
+		{
+			get
+			{
+				return this._idpermiso;
+			}
+			set
+			{
+				this._idpermiso = value;
+			}
+		}
+		
+		private int _idrol;
+		public virtual int Idrol
+		{
+			get
+			{
+				return this._idrol;
+			}
+			set
+			{
+				this._idrol = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private Permiso _permiso;
+		public virtual Permiso Permiso
+		{
+			get
+			{
+				return this._permiso;
+			}
+			set
+			{
+				this._permiso = value;
+			}
+		}
+		
+		private Role _role;
+		public virtual Role Role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				this._role = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Permiso
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Permisos_rol> _permisos_rols = new List<Permisos_rol>();
+		public virtual IList<Permisos_rol> Permisos_rols
+		{
+			get
+			{
+				return this._permisos_rols;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Paise
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private IList<Departamento> _departamentos = new List<Departamento>();
+		public virtual IList<Departamento> Departamentos
+		{
+			get
+			{
+				return this._departamentos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class MesasFilasSilla
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idMesasFilas;
+		public virtual int? IdMesasFilas
+		{
+			get
+			{
+				return this._idMesasFilas;
+			}
+			set
+			{
+				this._idMesasFilas = value;
+			}
+		}
+		
+		private int? _idSilla;
+		public virtual int? IdSilla
+		{
+			get
+			{
+				return this._idSilla;
+			}
+			set
+			{
+				this._idSilla = value;
+			}
+		}
+		
+		private MesasFila _mesasFila;
+		public virtual MesasFila MesasFila
+		{
+			get
+			{
+				return this._mesasFila;
+			}
+			set
+			{
+				this._mesasFila = value;
+			}
+		}
+		
+		private Silla _silla;
+		public virtual Silla Silla
+		{
+			get
+			{
+				return this._silla;
+			}
+			set
+			{
+				this._silla = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class MesasFila
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _label;
+		public virtual string Label
+		{
+			get
+			{
+				return this._label;
+			}
+			set
+			{
+				this._label = value;
+			}
+		}
+		
+		private string _orientacion;
+		public virtual string Orientacion
+		{
+			get
+			{
+				return this._orientacion;
+			}
+			set
+			{
+				this._orientacion = value;
+			}
+		}
+		
+		private string _inicioNumeracion;
+		public virtual string InicioNumeracion
+		{
+			get
+			{
+				return this._inicioNumeracion;
+			}
+			set
+			{
+				this._inicioNumeracion = value;
+			}
+		}
+		
+		private string _forma;
+		public virtual string Forma
+		{
+			get
+			{
+				return this._forma;
+			}
+			set
+			{
+				this._forma = value;
+			}
+		}
+		
+		private int? _capacidad;
+		public virtual int? Capacidad
+		{
+			get
+			{
+				return this._capacidad;
+			}
+			set
+			{
+				this._capacidad = value;
+			}
+		}
+		
+		private int? _idTipoNumracion;
+		public virtual int? IdTipoNumracion
+		{
+			get
+			{
+				return this._idTipoNumracion;
+			}
+			set
+			{
+				this._idTipoNumracion = value;
+			}
+		}
+		
+		private TipoNumeracion _tipoNumeracion;
+		public virtual TipoNumeracion TipoNumeracion
+		{
+			get
+			{
+				return this._tipoNumeracion;
+			}
+			set
+			{
+				this._tipoNumeracion = value;
+			}
+		}
+		
+		private IList<MesasFilasSilla> _mesasFilasSillas = new List<MesasFilasSilla>();
+		public virtual IList<MesasFilasSilla> MesasFilasSillas
+		{
+			get
+			{
+				return this._mesasFilasSillas;
+			}
+		}
+		
+		private IList<LocalidadMesasFilasSilla> _localidadMesasFilasSillas = new List<LocalidadMesasFilasSilla>();
+		public virtual IList<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas
+		{
+			get
+			{
+				return this._localidadMesasFilasSillas;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class MapasVenue
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idVenue;
+		public virtual int? IdVenue
+		{
+			get
+			{
+				return this._idVenue;
+			}
+			set
+			{
+				this._idVenue = value;
+			}
+		}
+		
+		private int? _idMapa;
+		public virtual int? IdMapa
+		{
+			get
+			{
+				return this._idMapa;
+			}
+			set
+			{
+				this._idMapa = value;
+			}
+		}
+		
+		private Mapa _mapa;
+		public virtual Mapa Mapa
+		{
+			get
+			{
+				return this._mapa;
+			}
+			set
+			{
+				this._mapa = value;
+			}
+		}
+		
+		private Venue _venue;
+		public virtual Venue Venue
+		{
+			get
+			{
+				return this._venue;
+			}
+			set
+			{
+				this._venue = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Mapa
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _code;
+		public virtual string Code
+		{
+			get
+			{
+				return this._code;
+			}
+			set
+			{
+				this._code = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private int? _capacidad;
+		public virtual int? Capacidad
+		{
+			get
+			{
+				return this._capacidad;
+			}
+			set
+			{
+				this._capacidad = value;
+			}
+		}
+		
+		private string _mapa1;
+		public virtual string Mapa1
+		{
+			get
+			{
+				return this._mapa1;
+			}
+			set
+			{
+				this._mapa1 = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private IList<MapasVenue> _mapasVenues = new List<MapasVenue>();
+		public virtual IList<MapasVenue> MapasVenues
+		{
+			get
+			{
+				return this._mapasVenues;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class LocalidadMesasFilasSilla
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idLocalidad;
+		public virtual int? IdLocalidad
+		{
+			get
+			{
+				return this._idLocalidad;
+			}
+			set
+			{
+				this._idLocalidad = value;
+			}
+		}
+		
+		private int? _idMesasFilas;
+		public virtual int? IdMesasFilas
+		{
+			get
+			{
+				return this._idMesasFilas;
+			}
+			set
+			{
+				this._idMesasFilas = value;
+			}
+		}
+		
+		private int? _idConsumo;
+		public virtual int? IdConsumo
+		{
+			get
+			{
+				return this._idConsumo;
+			}
+			set
+			{
+				this._idConsumo = value;
+			}
+		}
+		
+		private Consumo _consumo;
+		public virtual Consumo Consumo
+		{
+			get
+			{
+				return this._consumo;
+			}
+			set
+			{
+				this._consumo = value;
+			}
+		}
+		
+		private Localidad _localidad;
+		public virtual Localidad Localidad
+		{
+			get
+			{
+				return this._localidad;
+			}
+			set
+			{
+				this._localidad = value;
+			}
+		}
+		
+		private MesasFila _mesasFila;
+		public virtual MesasFila MesasFila
+		{
+			get
+			{
+				return this._mesasFila;
+			}
+			set
+			{
+				this._mesasFila = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class LocalidadesVenue
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idVenue;
+		public virtual int? IdVenue
+		{
+			get
+			{
+				return this._idVenue;
+			}
+			set
+			{
+				this._idVenue = value;
+			}
+		}
+		
+		private int? _idLocalidad;
+		public virtual int? IdLocalidad
+		{
+			get
+			{
+				return this._idLocalidad;
+			}
+			set
+			{
+				this._idLocalidad = value;
+			}
+		}
+		
+		private Localidad _localidad;
+		public virtual Localidad Localidad
+		{
+			get
+			{
+				return this._localidad;
+			}
+			set
+			{
+				this._localidad = value;
+			}
+		}
+		
+		private Venue _venue;
+		public virtual Venue Venue
+		{
+			get
+			{
+				return this._venue;
+			}
+			set
+			{
+				this._venue = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Localidad
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _label;
+		public virtual string Label
+		{
+			get
+			{
+				return this._label;
+			}
+			set
+			{
+				this._label = value;
+			}
+		}
+		
+		private decimal? _curve;
+		public virtual decimal? Curve
+		{
+			get
+			{
+				return this._curve;
+			}
+			set
+			{
+				this._curve = value;
+			}
+		}
+		
+		private decimal? _skew;
+		public virtual decimal? Skew
+		{
+			get
+			{
+				return this._skew;
+			}
+			set
+			{
+				this._skew = value;
+			}
+		}
+		
+		private decimal? _x;
+		public virtual decimal? X
+		{
+			get
+			{
+				return this._x;
+			}
+			set
+			{
+				this._x = value;
+			}
+		}
+		
+		private decimal? _y;
+		public virtual decimal? Y
+		{
+			get
+			{
+				return this._y;
+			}
+			set
+			{
+				this._y = value;
+			}
+		}
+		
+		private decimal? _angle;
+		public virtual decimal? Angle
+		{
+			get
+			{
+				return this._angle;
+			}
+			set
+			{
+				this._angle = value;
+			}
+		}
+		
+		private int? _width;
+		public virtual int? Width
+		{
+			get
+			{
+				return this._width;
+			}
+			set
+			{
+				this._width = value;
+			}
+		}
+		
+		private int? _height;
+		public virtual int? Height
+		{
+			get
+			{
+				return this._height;
+			}
+			set
+			{
+				this._height = value;
+			}
+		}
+		
+		private int? _aforo;
+		public virtual int? Aforo
+		{
+			get
+			{
+				return this._aforo;
+			}
+			set
+			{
+				this._aforo = value;
+			}
+		}
+		
+		private int? _idTipoLocalidad;
+		public virtual int? IdTipoLocalidad
+		{
+			get
+			{
+				return this._idTipoLocalidad;
+			}
+			set
+			{
+				this._idTipoLocalidad = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private int? _idTipoSubLocalidad;
+		public virtual int? IdTipoSubLocalidad
+		{
+			get
+			{
+				return this._idTipoSubLocalidad;
+			}
+			set
+			{
+				this._idTipoSubLocalidad = value;
+			}
+		}
+		
+		private TipoLocalidad _tipoLocalidad;
+		public virtual TipoLocalidad TipoLocalidad
+		{
+			get
+			{
+				return this._tipoLocalidad;
+			}
+			set
+			{
+				this._tipoLocalidad = value;
+			}
+		}
+		
+		private IList<LocalidadMesasFilasSilla> _localidadMesasFilasSillas = new List<LocalidadMesasFilasSilla>();
+		public virtual IList<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas
+		{
+			get
+			{
+				return this._localidadMesasFilasSillas;
+			}
+		}
+		
+		private IList<LocalidadesVenue> _localidadesVenues = new List<LocalidadesVenue>();
+		public virtual IList<LocalidadesVenue> LocalidadesVenues
+		{
+			get
+			{
+				return this._localidadesVenues;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class ImpuestosEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idevento;
+		public virtual int? Idevento
+		{
+			get
+			{
+				return this._idevento;
+			}
+			set
+			{
+				this._idevento = value;
+			}
+		}
+		
+		private int? _idimpuesto;
+		public virtual int? Idimpuesto
+		{
+			get
+			{
+				return this._idimpuesto;
+			}
+			set
+			{
+				this._idimpuesto = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+		private Impuesto _impuesto;
+		public virtual Impuesto Impuesto
+		{
+			get
+			{
+				return this._impuesto;
+			}
+			set
+			{
+				this._impuesto = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Impuesto
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private decimal _valor;
+		public virtual decimal Valor
+		{
+			get
+			{
+				return this._valor;
+			}
+			set
+			{
+				this._valor = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<ImpuestosEvento> _impuestosEventos = new List<ImpuestosEvento>();
+		public virtual IList<ImpuestosEvento> ImpuestosEventos
+		{
+			get
+			{
+				return this._impuestosEventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Genero
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<Empresario> _empresarios = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios
+		{
+			get
+			{
+				return this._empresarios;
+			}
+		}
+		
+		private IList<Cliente> _clientes = new List<Cliente>();
+		public virtual IList<Cliente> Clientes
+		{
+			get
+			{
+				return this._clientes;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class FuncionesEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idevento;
+		public virtual int? Idevento
+		{
+			get
+			{
+				return this._idevento;
+			}
+			set
+			{
+				this._idevento = value;
+			}
+		}
+		
+		private DateTime? _fechaIncial;
+		public virtual DateTime? FechaIncial
+		{
+			get
+			{
+				return this._fechaIncial;
+			}
+			set
+			{
+				this._fechaIncial = value;
+			}
+		}
+		
+		private DateTime? _fechaFinal;
+		public virtual DateTime? FechaFinal
+		{
+			get
+			{
+				return this._fechaFinal;
+			}
+			set
+			{
+				this._fechaFinal = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private string _label;
+		public virtual string Label
+		{
+			get
+			{
+				return this._label;
+			}
+			set
+			{
+				this._label = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private DateTime? _aperturaPuertas;
+		public virtual DateTime? AperturaPuertas
+		{
+			get
+			{
+				return this._aperturaPuertas;
+			}
+			set
+			{
+				this._aperturaPuertas = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Evento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private bool? _multifuncion;
+		public virtual bool? Multifuncion
+		{
+			get
+			{
+				return this._multifuncion;
+			}
+			set
+			{
+				this._multifuncion = value;
+			}
+		}
+		
+		private int? _cantidadFunciones;
+		public virtual int? CantidadFunciones
+		{
+			get
+			{
+				return this._cantidadFunciones;
+			}
+			set
+			{
+				this._cantidadFunciones = value;
+			}
+		}
+		
+		private DateTime? _fechaInicial;
+		public virtual DateTime? FechaInicial
+		{
+			get
+			{
+				return this._fechaInicial;
+			}
+			set
+			{
+				this._fechaInicial = value;
+			}
+		}
+		
+		private DateTime? _fechaFinal;
+		public virtual DateTime? FechaFinal
+		{
+			get
+			{
+				return this._fechaFinal;
+			}
+			set
+			{
+				this._fechaFinal = value;
+			}
+		}
+		
+		private int? _venue_id;
+		public virtual int? Venue_id
+		{
+			get
+			{
+				return this._venue_id;
+			}
+			set
+			{
+				this._venue_id = value;
+			}
+		}
+		
+		private int? _empresario_id;
+		public virtual int? Empresario_id
+		{
+			get
+			{
+				return this._empresario_id;
+			}
+			set
+			{
+				this._empresario_id = value;
+			}
+		}
+		
+		private int? _tipoEvento;
+		public virtual int? TipoEvento
+		{
+			get
+			{
+				return this._tipoEvento;
+			}
+			set
+			{
+				this._tipoEvento = value;
+			}
+		}
+		
+		private string _foto;
+		public virtual string Foto
+		{
+			get
+			{
+				return this._foto;
+			}
+			set
+			{
+				this._foto = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private int? _edadMinima;
+		public virtual int? EdadMinima
+		{
+			get
+			{
+				return this._edadMinima;
+			}
+			set
+			{
+				this._edadMinima = value;
+			}
+		}
+		
+		private bool? _eventoPublico;
+		public virtual bool? EventoPublico
+		{
+			get
+			{
+				return this._eventoPublico;
+			}
+			set
+			{
+				this._eventoPublico = value;
+			}
+		}
+		
+		private int? _tipoRecaudo_id;
+		public virtual int? TipoRecaudo_id
+		{
+			get
+			{
+				return this._tipoRecaudo_id;
+			}
+			set
+			{
+				this._tipoRecaudo_id = value;
+			}
+		}
+		
+		private int? _entradasxPedidoOcompra;
+		public virtual int? EntradasxPedidoOcompra
+		{
+			get
+			{
+				return this._entradasxPedidoOcompra;
+			}
+			set
+			{
+				this._entradasxPedidoOcompra = value;
+			}
+		}
+		
+		private int? _entradasxUsuario;
+		public virtual int? EntradasxUsuario
+		{
+			get
+			{
+				return this._entradasxUsuario;
+			}
+			set
+			{
+				this._entradasxUsuario = value;
+			}
+		}
+		
+		private bool? _aplicaServicio;
+		public virtual bool? AplicaServicio
+		{
+			get
+			{
+				return this._aplicaServicio;
+			}
+			set
+			{
+				this._aplicaServicio = value;
+			}
+		}
+		
+		private int? _cantidadDiasValides;
+		public virtual int? CantidadDiasValides
+		{
+			get
+			{
+				return this._cantidadDiasValides;
+			}
+			set
+			{
+				this._cantidadDiasValides = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private int? _aforoTotal;
+		public virtual int? AforoTotal
+		{
+			get
+			{
+				return this._aforoTotal;
+			}
+			set
+			{
+				this._aforoTotal = value;
+			}
+		}
+		
+		private string _estado;
+		public virtual string Estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				this._estado = value;
+			}
+		}
+		
+		private string _urlVideo;
+		public virtual string UrlVideo
+		{
+			get
+			{
+				return this._urlVideo;
+			}
+			set
+			{
+				this._urlVideo = value;
+			}
+		}
+		
+		private Empresario _empresario;
+		public virtual Empresario Empresario
+		{
+			get
+			{
+				return this._empresario;
+			}
+			set
+			{
+				this._empresario = value;
+			}
+		}
+		
+		private TipoEvento _tipoEvento1;
+		public virtual TipoEvento TipoEvento1
+		{
+			get
+			{
+				return this._tipoEvento1;
+			}
+			set
+			{
+				this._tipoEvento1 = value;
+			}
+		}
+		
+		private TipoRecaudo _tipoRecaudo;
+		public virtual TipoRecaudo TipoRecaudo
+		{
+			get
+			{
+				return this._tipoRecaudo;
+			}
+			set
+			{
+				this._tipoRecaudo = value;
+			}
+		}
+		
+		private Venue _venue;
+		public virtual Venue Venue
+		{
+			get
+			{
+				return this._venue;
+			}
+			set
+			{
+				this._venue = value;
+			}
+		}
+		
+		private IList<TicketsEvento> _ticketsEventos = new List<TicketsEvento>();
+		public virtual IList<TicketsEvento> TicketsEventos
+		{
+			get
+			{
+				return this._ticketsEventos;
+			}
+		}
+		
+		private IList<ServiciosEvento> _serviciosEventos = new List<ServiciosEvento>();
+		public virtual IList<ServiciosEvento> ServiciosEventos
+		{
+			get
+			{
+				return this._serviciosEventos;
+			}
+		}
+		
+		private IList<ImpuestosEvento> _impuestosEventos = new List<ImpuestosEvento>();
+		public virtual IList<ImpuestosEvento> ImpuestosEventos
+		{
+			get
+			{
+				return this._impuestosEventos;
+			}
+		}
+		
+		private IList<FuncionesEvento> _funcionesEventos = new List<FuncionesEvento>();
+		public virtual IList<FuncionesEvento> FuncionesEventos
+		{
+			get
+			{
+				return this._funcionesEventos;
+			}
+		}
+		
+		private IList<EtapasVentaEvento> _etapasVentaEventos = new List<EtapasVentaEvento>();
+		public virtual IList<EtapasVentaEvento> EtapasVentaEventos
+		{
+			get
+			{
+				return this._etapasVentaEventos;
+			}
+		}
+		
+		private IList<CategoriasEvento> _categoriasEventos = new List<CategoriasEvento>();
+		public virtual IList<CategoriasEvento> CategoriasEventos
+		{
+			get
+			{
+				return this._categoriasEventos;
+			}
+		}
+		
+		private IList<CanalesVentaEvento> _canalesVentaEventos = new List<CanalesVentaEvento>();
+		public virtual IList<CanalesVentaEvento> CanalesVentaEventos
+		{
+			get
+			{
+				return this._canalesVentaEventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class EtapasVentaEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private string _tipo;
+		public virtual string Tipo
+		{
+			get
+			{
+				return this._tipo;
+			}
+			set
+			{
+				this._tipo = value;
+			}
+		}
+		
+		private DateTime? _fechaInicial;
+		public virtual DateTime? FechaInicial
+		{
+			get
+			{
+				return this._fechaInicial;
+			}
+			set
+			{
+				this._fechaInicial = value;
+			}
+		}
+		
+		private DateTime? _fechaFinal;
+		public virtual DateTime? FechaFinal
+		{
+			get
+			{
+				return this._fechaFinal;
+			}
+			set
+			{
+				this._fechaFinal = value;
+			}
+		}
+		
+		private int? _idevento;
+		public virtual int? Idevento
+		{
+			get
+			{
+				return this._idevento;
+			}
+			set
+			{
+				this._idevento = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+		private IList<TicketsEtapa> _ticketsEtapas = new List<TicketsEtapa>();
+		public virtual IList<TicketsEtapa> TicketsEtapas
+		{
+			get
+			{
+				return this._ticketsEtapas;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class EstadoImpresion
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<TransaccionTicketsImpresion> _transaccionTicketsImpresions = new List<TransaccionTicketsImpresion>();
+		public virtual IList<TransaccionTicketsImpresion> TransaccionTicketsImpresions
+		{
+			get
+			{
+				return this._transaccionTicketsImpresions;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Empresario
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _tipoEmpresa_id;
+		public virtual int? TipoEmpresa_id
+		{
+			get
+			{
+				return this._tipoEmpresa_id;
+			}
+			set
+			{
+				this._tipoEmpresa_id = value;
+			}
+		}
+		
+		private string _razonSocial;
+		public virtual string RazonSocial
+		{
+			get
+			{
+				return this._razonSocial;
+			}
+			set
+			{
+				this._razonSocial = value;
+			}
+		}
+		
+		private int? _tipoDocumento_id;
+		public virtual int? TipoDocumento_id
+		{
+			get
+			{
+				return this._tipoDocumento_id;
+			}
+			set
+			{
+				this._tipoDocumento_id = value;
+			}
+		}
+		
+		private string _identificacion;
+		public virtual string Identificacion
+		{
+			get
+			{
+				return this._identificacion;
+			}
+			set
+			{
+				this._identificacion = value;
+			}
+		}
+		
+		private int? _tipoPersona_id;
+		public virtual int? TipoPersona_id
+		{
+			get
+			{
+				return this._tipoPersona_id;
+			}
+			set
+			{
+				this._tipoPersona_id = value;
+			}
+		}
+		
+		private string _direccion;
+		public virtual string Direccion
+		{
+			get
+			{
+				return this._direccion;
+			}
+			set
+			{
+				this._direccion = value;
+			}
+		}
+		
+		private int? _ciudad_id;
+		public virtual int? Ciudad_id
+		{
+			get
+			{
+				return this._ciudad_id;
+			}
+			set
+			{
+				this._ciudad_id = value;
+			}
+		}
+		
+		private string _telefono;
+		public virtual string Telefono
+		{
+			get
+			{
+				return this._telefono;
+			}
+			set
+			{
+				this._telefono = value;
+			}
+		}
+		
+		private string _celular;
+		public virtual string Celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				this._celular = value;
+			}
+		}
+		
+		private string _emailNotificacion;
+		public virtual string EmailNotificacion
+		{
+			get
+			{
+				return this._emailNotificacion;
+			}
+			set
+			{
+				this._emailNotificacion = value;
+			}
+		}
+		
+		private string _numeroRegistroArtesEscenicas;
+		public virtual string NumeroRegistroArtesEscenicas
+		{
+			get
+			{
+				return this._numeroRegistroArtesEscenicas;
+			}
+			set
+			{
+				this._numeroRegistroArtesEscenicas = value;
+			}
+		}
+		
+		private string _nombreRL;
+		public virtual string NombreRL
+		{
+			get
+			{
+				return this._nombreRL;
+			}
+			set
+			{
+				this._nombreRL = value;
+			}
+		}
+		
+		private string _apellidosRL;
+		public virtual string ApellidosRL
+		{
+			get
+			{
+				return this._apellidosRL;
+			}
+			set
+			{
+				this._apellidosRL = value;
+			}
+		}
+		
+		private int? _tipoDocumentoRL_id;
+		public virtual int? TipoDocumentoRL_id
+		{
+			get
+			{
+				return this._tipoDocumentoRL_id;
+			}
+			set
+			{
+				this._tipoDocumentoRL_id = value;
+			}
+		}
+		
+		private string _identificacionRL;
+		public virtual string IdentificacionRL
+		{
+			get
+			{
+				return this._identificacionRL;
+			}
+			set
+			{
+				this._identificacionRL = value;
+			}
+		}
+		
+		private int? _sexo_idRL;
+		public virtual int? Sexo_idRL
+		{
+			get
+			{
+				return this._sexo_idRL;
+			}
+			set
+			{
+				this._sexo_idRL = value;
+			}
+		}
+		
+		private string _emailRL;
+		public virtual string EmailRL
+		{
+			get
+			{
+				return this._emailRL;
+			}
+			set
+			{
+				this._emailRL = value;
+			}
+		}
+		
+		private string _direccionRL;
+		public virtual string DireccionRL
+		{
+			get
+			{
+				return this._direccionRL;
+			}
+			set
+			{
+				this._direccionRL = value;
+			}
+		}
+		
+		private int? _ciudad_idRL;
+		public virtual int? Ciudad_idRL
+		{
+			get
+			{
+				return this._ciudad_idRL;
+			}
+			set
+			{
+				this._ciudad_idRL = value;
+			}
+		}
+		
+		private string _telefonoRL;
+		public virtual string TelefonoRL
+		{
+			get
+			{
+				return this._telefonoRL;
+			}
+			set
+			{
+				this._telefonoRL = value;
+			}
+		}
+		
+		private string _celularRL;
+		public virtual string CelularRL
+		{
+			get
+			{
+				return this._celularRL;
+			}
+			set
+			{
+				this._celularRL = value;
+			}
+		}
+		
+		private bool? _ventasWebReacudoDirecto;
+		public virtual bool? VentasWebReacudoDirecto
+		{
+			get
+			{
+				return this._ventasWebReacudoDirecto;
+			}
+			set
+			{
+				this._ventasWebReacudoDirecto = value;
+			}
+		}
+		
+		private DateTime? _crateDate;
+		public virtual DateTime? CrateDate
+		{
+			get
+			{
+				return this._crateDate;
+			}
+			set
+			{
+				this._crateDate = value;
+			}
+		}
+		
+		private bool? _bloqueado;
+		public virtual bool? Bloqueado
+		{
+			get
+			{
+				return this._bloqueado;
+			}
+			set
+			{
+				this._bloqueado = value;
+			}
+		}
+		
+		private Ciudade _ciudade;
+		public virtual Ciudade Ciudade
+		{
+			get
+			{
+				return this._ciudade;
+			}
+			set
+			{
+				this._ciudade = value;
+			}
+		}
+		
+		private Ciudade _ciudade1;
+		public virtual Ciudade Ciudade1
+		{
+			get
+			{
+				return this._ciudade1;
+			}
+			set
+			{
+				this._ciudade1 = value;
+			}
+		}
+		
+		private Genero _genero;
+		public virtual Genero Genero
+		{
+			get
+			{
+				return this._genero;
+			}
+			set
+			{
+				this._genero = value;
+			}
+		}
+		
+		private Tipodocumento _tipodocumento;
+		public virtual Tipodocumento Tipodocumento
+		{
+			get
+			{
+				return this._tipodocumento;
+			}
+			set
+			{
+				this._tipodocumento = value;
+			}
+		}
+		
+		private Tipodocumento _tipodocumento1;
+		public virtual Tipodocumento Tipodocumento1
+		{
+			get
+			{
+				return this._tipodocumento1;
+			}
+			set
+			{
+				this._tipodocumento1 = value;
+			}
+		}
+		
+		private Tipoempresa _tipoempresa;
+		public virtual Tipoempresa Tipoempresa
+		{
+			get
+			{
+				return this._tipoempresa;
+			}
+			set
+			{
+				this._tipoempresa = value;
+			}
+		}
+		
+		private Tipopersona _tipopersona;
+		public virtual Tipopersona Tipopersona
+		{
+			get
+			{
+				return this._tipopersona;
+			}
+			set
+			{
+				this._tipopersona = value;
+			}
+		}
+		
+		private IList<Evento> _eventos = new List<Evento>();
+		public virtual IList<Evento> Eventos
+		{
+			get
+			{
+				return this._eventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class DireccionesCliente
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _ubicacion;
+		public virtual string Ubicacion
+		{
+			get
+			{
+				return this._ubicacion;
+			}
+			set
+			{
+				this._ubicacion = value;
+			}
+		}
+		
+		private string _codigoPostal;
+		public virtual string CodigoPostal
+		{
+			get
+			{
+				return this._codigoPostal;
+			}
+			set
+			{
+				this._codigoPostal = value;
+			}
+		}
+		
+		private int? _ciudad_id;
+		public virtual int? Ciudad_id
+		{
+			get
+			{
+				return this._ciudad_id;
+			}
+			set
+			{
+				this._ciudad_id = value;
+			}
+		}
+		
+		private int? _cliente_id;
+		public virtual int? Cliente_id
+		{
+			get
+			{
+				return this._cliente_id;
+			}
+			set
+			{
+				this._cliente_id = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private Ciudade _ciudade;
+		public virtual Ciudade Ciudade
+		{
+			get
+			{
+				return this._ciudade;
+			}
+			set
+			{
+				this._ciudade = value;
+			}
+		}
+		
+		private Cliente _cliente;
+		public virtual Cliente Cliente
+		{
+			get
+			{
+				return this._cliente;
+			}
+			set
+			{
+				this._cliente = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Departamento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private int _idpais;
+		public virtual int Idpais
+		{
+			get
+			{
+				return this._idpais;
+			}
+			set
+			{
+				this._idpais = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private Paise _paise;
+		public virtual Paise Paise
+		{
+			get
+			{
+				return this._paise;
+			}
+			set
+			{
+				this._paise = value;
+			}
+		}
+		
+		private IList<Ciudade> _ciudades = new List<Ciudade>();
+		public virtual IList<Ciudade> Ciudades
+		{
+			get
+			{
+				return this._ciudades;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Consumo
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private decimal? _valor;
+		public virtual decimal? Valor
+		{
+			get
+			{
+				return this._valor;
+			}
+			set
+			{
+				this._valor = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private IList<LocalidadMesasFilasSilla> _localidadMesasFilasSillas = new List<LocalidadMesasFilasSilla>();
+		public virtual IList<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas
+		{
+			get
+			{
+				return this._localidadMesasFilasSillas;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Cliente
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _tipoPersona_id;
+		public virtual int? TipoPersona_id
+		{
+			get
+			{
+				return this._tipoPersona_id;
+			}
+			set
+			{
+				this._tipoPersona_id = value;
+			}
+		}
+		
+		private int? _tipoDocumento_id;
+		public virtual int? TipoDocumento_id
+		{
+			get
+			{
+				return this._tipoDocumento_id;
+			}
+			set
+			{
+				this._tipoDocumento_id = value;
+			}
+		}
+		
+		private string _identificacion;
+		public virtual string Identificacion
+		{
+			get
+			{
+				return this._identificacion;
+			}
+			set
+			{
+				this._identificacion = value;
+			}
+		}
+		
+		private string _nombres;
+		public virtual string Nombres
+		{
+			get
+			{
+				return this._nombres;
+			}
+			set
+			{
+				this._nombres = value;
+			}
+		}
+		
+		private string _apellidos;
+		public virtual string Apellidos
+		{
+			get
+			{
+				return this._apellidos;
+			}
+			set
+			{
+				this._apellidos = value;
+			}
+		}
+		
+		private DateTime? _fechaNacimiento;
+		public virtual DateTime? FechaNacimiento
+		{
+			get
+			{
+				return this._fechaNacimiento;
+			}
+			set
+			{
+				this._fechaNacimiento = value;
+			}
+		}
+		
+		private int? _genero_id;
+		public virtual int? Genero_id
+		{
+			get
+			{
+				return this._genero_id;
+			}
+			set
+			{
+				this._genero_id = value;
+			}
+		}
+		
+		private string _email;
+		public virtual string Email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				this._email = value;
+			}
+		}
+		
+		private string _claveCliente;
+		public virtual string ClaveCliente
+		{
+			get
+			{
+				return this._claveCliente;
+			}
+			set
+			{
+				this._claveCliente = value;
+			}
+		}
+		
+		private string _celular;
+		public virtual string Celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				this._celular = value;
+			}
+		}
+		
+		private string _telefonoCasa;
+		public virtual string TelefonoCasa
+		{
+			get
+			{
+				return this._telefonoCasa;
+			}
+			set
+			{
+				this._telefonoCasa = value;
+			}
+		}
+		
+		private string _telefonoOficina;
+		public virtual string TelefonoOficina
+		{
+			get
+			{
+				return this._telefonoOficina;
+			}
+			set
+			{
+				this._telefonoOficina = value;
+			}
+		}
+		
+		private string _jornadaEntrega;
+		public virtual string JornadaEntrega
+		{
+			get
+			{
+				return this._jornadaEntrega;
+			}
+			set
+			{
+				this._jornadaEntrega = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private bool? _bloqueado;
+		public virtual bool? Bloqueado
+		{
+			get
+			{
+				return this._bloqueado;
+			}
+			set
+			{
+				this._bloqueado = value;
+			}
+		}
+		
+		private Genero _genero;
+		public virtual Genero Genero
+		{
+			get
+			{
+				return this._genero;
+			}
+			set
+			{
+				this._genero = value;
+			}
+		}
+		
+		private Tipodocumento _tipodocumento;
+		public virtual Tipodocumento Tipodocumento
+		{
+			get
+			{
+				return this._tipodocumento;
+			}
+			set
+			{
+				this._tipodocumento = value;
+			}
+		}
+		
+		private Tipopersona _tipopersona;
+		public virtual Tipopersona Tipopersona
+		{
+			get
+			{
+				return this._tipopersona;
+			}
+			set
+			{
+				this._tipopersona = value;
+			}
+		}
+		
+		private IList<DireccionesCliente> _direccionesClientes = new List<DireccionesCliente>();
+		public virtual IList<DireccionesCliente> DireccionesClientes
+		{
+			get
+			{
+				return this._direccionesClientes;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Ciudade
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private int _iddepartamento;
+		public virtual int Iddepartamento
+		{
+			get
+			{
+				return this._iddepartamento;
+			}
+			set
+			{
+				this._iddepartamento = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private string _codigo;
+		public virtual string Codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				this._codigo = value;
+			}
+		}
+		
+		private Departamento _departamento;
+		public virtual Departamento Departamento
+		{
+			get
+			{
+				return this._departamento;
+			}
+			set
+			{
+				this._departamento = value;
+			}
+		}
+		
+		private IList<Venue> _venues = new List<Venue>();
+		public virtual IList<Venue> Venues
+		{
+			get
+			{
+				return this._venues;
+			}
+		}
+		
+		private IList<Empresario> _empresarios = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios
+		{
+			get
+			{
+				return this._empresarios;
+			}
+		}
+		
+		private IList<Empresario> _empresarios1 = new List<Empresario>();
+		public virtual IList<Empresario> Empresarios1
+		{
+			get
+			{
+				return this._empresarios1;
+			}
+		}
+		
+		private IList<DireccionesCliente> _direccionesClientes = new List<DireccionesCliente>();
+		public virtual IList<DireccionesCliente> DireccionesClientes
+		{
+			get
+			{
+				return this._direccionesClientes;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class CategoriasEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idEvento;
+		public virtual int? IdEvento
+		{
+			get
+			{
+				return this._idEvento;
+			}
+			set
+			{
+				this._idEvento = value;
+			}
+		}
+		
+		private int? _idCategoria;
+		public virtual int? IdCategoria
+		{
+			get
+			{
+				return this._idCategoria;
+			}
+			set
+			{
+				this._idCategoria = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+		private Categoria _categoria;
+		public virtual Categoria Categoria
+		{
+			get
+			{
+				return this._categoria;
+			}
+			set
+			{
+				this._categoria = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class Categoria
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private string _descripcion;
+		public virtual string Descripcion
+		{
+			get
+			{
+				return this._descripcion;
+			}
+			set
+			{
+				this._descripcion = value;
+			}
+		}
+		
+		private DateTime? _fechaCreacion;
+		public virtual DateTime? FechaCreacion
+		{
+			get
+			{
+				return this._fechaCreacion;
+			}
+			set
+			{
+				this._fechaCreacion = value;
+			}
+		}
+		
+		private bool? _verCodigoArtesEscenicas;
+		public virtual bool? VerCodigoArtesEscenicas
+		{
+			get
+			{
+				return this._verCodigoArtesEscenicas;
+			}
+			set
+			{
+				this._verCodigoArtesEscenicas = value;
+			}
+		}
+		
+		private IList<CategoriasEvento> _categoriasEventos = new List<CategoriasEvento>();
+		public virtual IList<CategoriasEvento> CategoriasEventos
+		{
+			get
+			{
+				return this._categoriasEventos;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class CanalesVentaEvento
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private int? _idevento;
+		public virtual int? Idevento
+		{
+			get
+			{
+				return this._idevento;
+			}
+			set
+			{
+				this._idevento = value;
+			}
+		}
+		
+		private int? _idcanal;
+		public virtual int? Idcanal
+		{
+			get
+			{
+				return this._idcanal;
+			}
+			set
+			{
+				this._idcanal = value;
+			}
+		}
+		
+		private CanalesVentum _canalesVentum;
+		public virtual CanalesVentum CanalesVentum
+		{
+			get
+			{
+				return this._canalesVentum;
+			}
+			set
+			{
+				this._canalesVentum = value;
+			}
+		}
+		
+		private Evento _evento;
+		public virtual Evento Evento
+		{
+			get
+			{
+				return this._evento;
+			}
+			set
+			{
+				this._evento = value;
+			}
+		}
+		
+	}
+}
+namespace SVGtoIMG.Data	
+{
+	public partial class CanalesVentum
+	{
+		private int _id;
+		public virtual int Id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				this._id = value;
+			}
+		}
+		
+		private string _nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				this._nombre = value;
+			}
+		}
+		
+		private DateTime _fechacreacion;
+		public virtual DateTime Fechacreacion
+		{
+			get
+			{
+				return this._fechacreacion;
+			}
+			set
+			{
+				this._fechacreacion = value;
+			}
+		}
+		
+		private IList<CanalesVentaEvento> _canalesVentaEventos = new List<CanalesVentaEvento>();
+		public virtual IList<CanalesVentaEvento> CanalesVentaEventos
+		{
+			get
+			{
+				return this._canalesVentaEventos;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

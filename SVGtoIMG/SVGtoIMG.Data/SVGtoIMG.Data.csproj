@@ -47,27 +47,16 @@
       <DependentUpon>Entities.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.generated.cs">
-      <DependentUpon>Entities.rlinq</DependentUpon>
-    </Compile>
-    <Compile Include="TransaccionPullTicketsImpresion.generated.cs">
-      <DependentUpon>Entities.rlinq</DependentUpon>
-    </Compile>
-    <Compile Include="TransaccionTicketsImpresion.generated.cs">
-      <DependentUpon>Entities.rlinq</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <OpenAccessDeploy Include="Entities.rlinq">
-      <Generator>MetaModelCodeGenerator</Generator>
-      <LastGenOutput>Entities.cs</LastGenOutput>
-    </OpenAccessDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="Entities.rlinq.diagram">
       <DependentUpon>Entities.rlinq</DependentUpon>
     </None>
+    <OpenAccessDeploy Include="Entities.rlinq">
+      <Generator>MetaModelCodeGenerator</Generator>
+      <LastGenOutput>Entities.cs</LastGenOutput>
+    </OpenAccessDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
