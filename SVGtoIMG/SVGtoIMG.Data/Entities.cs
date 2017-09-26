@@ -1340,58 +1340,6 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
-		private int? _idTicketEvento;
-		public virtual int? IdTicketEvento
-		{
-			get
-			{
-				return this._idTicketEvento;
-			}
-			set
-			{
-				this._idTicketEvento = value;
-			}
-		}
-		
-		private int? _idLocalidad;
-		public virtual int? IdLocalidad
-		{
-			get
-			{
-				return this._idLocalidad;
-			}
-			set
-			{
-				this._idLocalidad = value;
-			}
-		}
-		
-		private int? _idEtapa;
-		public virtual int? IdEtapa
-		{
-			get
-			{
-				return this._idEtapa;
-			}
-			set
-			{
-				this._idEtapa = value;
-			}
-		}
-		
-		private string _imagenTicket;
-		public virtual string ImagenTicket
-		{
-			get
-			{
-				return this._imagenTicket;
-			}
-			set
-			{
-				this._imagenTicket = value;
-			}
-		}
-		
 		private DateTime? _fecha;
 		public virtual DateTime? Fecha
 		{
@@ -1418,6 +1366,110 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
+		private string _token;
+		public virtual string Token
+		{
+			get
+			{
+				return this._token;
+			}
+			set
+			{
+				this._token = value;
+			}
+		}
+		
+		private int? _idTicketsEvento;
+		public virtual int? IdTicketsEvento
+		{
+			get
+			{
+				return this._idTicketsEvento;
+			}
+			set
+			{
+				this._idTicketsEvento = value;
+			}
+		}
+		
+		private int? _idTicketsEtapa;
+		public virtual int? IdTicketsEtapa
+		{
+			get
+			{
+				return this._idTicketsEtapa;
+			}
+			set
+			{
+				this._idTicketsEtapa = value;
+			}
+		}
+		
+		private string _imagenTicket;
+		public virtual string ImagenTicket
+		{
+			get
+			{
+				return this._imagenTicket;
+			}
+			set
+			{
+				this._imagenTicket = value;
+			}
+		}
+		
+		private int? _idEstado;
+		public virtual int? IdEstado
+		{
+			get
+			{
+				return this._idEstado;
+			}
+			set
+			{
+				this._idEstado = value;
+			}
+		}
+		
+		private int? _numeroInicial;
+		public virtual int? NumeroInicial
+		{
+			get
+			{
+				return this._numeroInicial;
+			}
+			set
+			{
+				this._numeroInicial = value;
+			}
+		}
+		
+		private int? _numeroFinal;
+		public virtual int? NumeroFinal
+		{
+			get
+			{
+				return this._numeroFinal;
+			}
+			set
+			{
+				this._numeroFinal = value;
+			}
+		}
+		
+		private TicketsEtapa _ticketsEtapa;
+		public virtual TicketsEtapa TicketsEtapa
+		{
+			get
+			{
+				return this._ticketsEtapa;
+			}
+			set
+			{
+				this._ticketsEtapa = value;
+			}
+		}
+		
 		private TicketsEvento _ticketsEvento;
 		public virtual TicketsEvento TicketsEvento
 		{
@@ -1428,6 +1480,19 @@ namespace SVGtoIMG.Data
 			set
 			{
 				this._ticketsEvento = value;
+			}
+		}
+		
+		private EstadoImpresion _estadoImpresion;
+		public virtual EstadoImpresion EstadoImpresion
+		{
+			get
+			{
+				return this._estadoImpresion;
+			}
+			set
+			{
+				this._estadoImpresion = value;
 			}
 		}
 		
@@ -2420,6 +2485,19 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
+		private Localidad _localidad;
+		public virtual Localidad Localidad
+		{
+			get
+			{
+				return this._localidad;
+			}
+			set
+			{
+				this._localidad = value;
+			}
+		}
+		
 		private TicketsEvento _ticketsEvento;
 		public virtual TicketsEvento TicketsEvento
 		{
@@ -2430,6 +2508,15 @@ namespace SVGtoIMG.Data
 			set
 			{
 				this._ticketsEvento = value;
+			}
+		}
+		
+		private IList<TransaccionPullTicketsImpresion> _transaccionPullTicketsImpresions = new List<TransaccionPullTicketsImpresion>();
+		public virtual IList<TransaccionPullTicketsImpresion> TransaccionPullTicketsImpresions
+		{
+			get
+			{
+				return this._transaccionPullTicketsImpresions;
 			}
 		}
 		
@@ -2491,29 +2578,55 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
-		private int? _idticketsEvento;
-		public virtual int? IdticketsEvento
+		private int? _idEstado;
+		public virtual int? IdEstado
 		{
 			get
 			{
-				return this._idticketsEvento;
+				return this._idEstado;
 			}
 			set
 			{
-				this._idticketsEvento = value;
+				this._idEstado = value;
 			}
 		}
 		
-		private string _estado;
-		public virtual string Estado
+		private DateTime? _fechaImpresion;
+		public virtual DateTime? FechaImpresion
 		{
 			get
 			{
-				return this._estado;
+				return this._fechaImpresion;
 			}
 			set
 			{
-				this._estado = value;
+				this._fechaImpresion = value;
+			}
+		}
+		
+		private int? _idTicketsEvento;
+		public virtual int? IdTicketsEvento
+		{
+			get
+			{
+				return this._idTicketsEvento;
+			}
+			set
+			{
+				this._idTicketsEvento = value;
+			}
+		}
+		
+		private EstadoImpresion _estadoImpresion;
+		public virtual EstadoImpresion EstadoImpresion
+		{
+			get
+			{
+				return this._estadoImpresion;
+			}
+			set
+			{
+				this._estadoImpresion = value;
 			}
 		}
 		
@@ -3787,6 +3900,15 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
+		private IList<TicketsEtapa> _ticketsEtapas = new List<TicketsEtapa>();
+		public virtual IList<TicketsEtapa> TicketsEtapas
+		{
+			get
+			{
+				return this._ticketsEtapas;
+			}
+		}
+		
 		private IList<LocalidadMesasFilasSilla> _localidadMesasFilasSillas = new List<LocalidadMesasFilasSilla>();
 		public virtual IList<LocalidadMesasFilasSilla> LocalidadMesasFilasSillas
 		{
@@ -4719,6 +4841,24 @@ namespace SVGtoIMG.Data
 			get
 			{
 				return this._transaccionTicketsImpresions;
+			}
+		}
+		
+		private IList<Ticket> _tickets = new List<Ticket>();
+		public virtual IList<Ticket> Tickets
+		{
+			get
+			{
+				return this._tickets;
+			}
+		}
+		
+		private IList<TransaccionPullTicketsImpresion> _transaccionPullTicketsImpresions = new List<TransaccionPullTicketsImpresion>();
+		public virtual IList<TransaccionPullTicketsImpresion> TransaccionPullTicketsImpresions
+		{
+			get
+			{
+				return this._transaccionPullTicketsImpresions;
 			}
 		}
 		

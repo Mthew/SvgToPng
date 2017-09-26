@@ -27,6 +27,42 @@ namespace SVGtoIMG.Converter
     {
     }
 
+    public enum TicketType
+    {
+        small = 0,
+        grande = 1, 
+        NONE = -1
+    }
+
+    public static class EstadoTicket
+    {
+        public const int IMPRESO = 2;
+        public const int DISPONIBLE = 3;
+        public const int IMPRESO_DEFECTUOSO = 4;
+        public const int REIMPRESO = 5;
+    }
+
+    public class TicketBase
+    {
+        public string token { get; set; }
+        public string Localidad { get; set; }
+        public string Etapa { get; set; }
+        public string Responsable { get; set; }
+        public TicketType ticketType { get; set; }
+        public int Cantidad { get; set; }
+        public int InicioNumeracion { get; set; }
+        public string numericBarcode { get; set; }
+        public TicketType getTicketType(string tipo)
+        {
+            switch (tipo)
+            {
+                case "small": return TicketType.small;
+                case "grande": return TicketType.grande;
+                default: return TicketType.NONE;
+            }
+        }
+    }
+
     public class Converter
     {
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
@@ -339,7 +375,7 @@ namespace SVGtoIMG.Converter
 
 
 
-        public MemoryStream DrawFromSvg(int Width, int Heigth)
+        public MemoryStream DrawFromSvg(int Width, int Height)
         {
             float wCenter = Width / 2;
             //int Width = 4857, Heigth = 12893;
@@ -350,7 +386,7 @@ namespace SVGtoIMG.Converter
             var n = DateTime.Now.ToFileTime();
             //Image barcode = getBarcode(1, n);
 
-            Image bk = Image.FromFile(@"C:\test\Image(1).png");
+            Image bk = Image.FromFile(@"C:\test\plantilla.png");
 
             //string imageText = System.IO.File.ReadAllText(@"C:\test\Image.txt");
             ////string fromBase = String.Format("data:image/png;base64,{0}", imageText);
@@ -366,16 +402,16 @@ namespace SVGtoIMG.Converter
 
             //Bitmap bm = new Bitmap(606, 1669);
             //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppGrayScale);
-            Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//saca menos cuadros
+            Bitmap bm = new Bitmap(Width, Height, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//saca menos cuadros
             //Bitmap bm = new Bitmap(Width, Heigth, System.Drawing.Imaging.PixelFormat.Format32bppArgb);//Original
 
-            Rectangle canvas = new Rectangle(0, 0, Width, Heigth);
+            Rectangle canvas = new Rectangle(0, 0, Width, Height);
 
             //Image bk2 = ResizeImage(bk, bm.Width, bm.Height);
 
             //bm.SetResolution(600, 600);
             Graphics g = Graphics.FromImage(bm);
-            g.FillRectangle(Brushes.White, 0, 0, Width, Heigth);
+            g.FillRectangle(Brushes.White, 0, 0, Width, Height);
 
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -386,7 +422,47 @@ namespace SVGtoIMG.Converter
             //g.DrawString("Empacadorea y empaque SAS\nTICKETEVENTO NO SE HACE RESPONSABLE DE COMERCIALIZACIÓN DE ESTA ENTRADA".ToUpper(), new Font("Arial", 8, System.Drawing.FontStyle.Bold), new SolidBrush(Color.Black), 26f, 112f);
             //g.DrawString(n.ToString().ToUpper(), new Font("Arial", 12f, System.Drawing.FontStyle.Regular), new SolidBrush(Color.Black), 45f, 474f);
 
+
+
             g.DrawImage(bk, 0, 0, bm.Width, bm.Height - 10);
+
+            //string numero = string.Empty;
+            ////e.Graphics.DrawImage(barcodeCanvas, rect);
+
+            //var black = new SolidBrush(Color.Black);
+
+            //StringFormat drawFormat = new StringFormat();
+            //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
+            //drawFormat.Alignment = StringAlignment.Center;
+
+            //Font fuenteResponsable = new Font("Arial", 4, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            //Font fuenteNumero = new Font("Arial Narrow", 8, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            //numero = string.Format("TICKET {0}", ticketNumber);
+
+            //int posXnumero = Convert.ToInt32((Width / 2) - (g.MeasureString(numero, fuenteNumero).Width / 2));
+            //int poxYResponsable = Convert.ToInt32((Height / 2));
+
+            //switch (ticketType)
+            //{
+            //    case TicketType.small:
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, 10);
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, Height - 25);
+            //        break;
+            //    case TicketType.grande:
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, 17);
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, 466);
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, 513);
+            //        g.DrawString(numero, fuenteNumero, black, posXnumero, 654);
+            //        break;
+            //}
+            //g.DrawString(responsable, fuenteResponsable, black, 2, poxYResponsable, drawFormat);
+
+
+
+
+
+            
 
 
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -397,7 +473,7 @@ namespace SVGtoIMG.Converter
             string UseCode = string.Format("{0}{1}{0}", "*", n);
 
             float XPosition = 20;
-            int YPosition = 410;
+            int YPosition = 420;
             const int _barHeight = 40;
             const float aumento = 1;
 
@@ -447,7 +523,7 @@ namespace SVGtoIMG.Converter
             ImageCodecInfo encodingInfo = barCodeClass.FindCodecInfo("PNG");
 
             //bm.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            bm.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            //bm.RotateFlip(RotateFlipType.Rotate180FlipNone);
 
             //'Save the drawing directly into the stream
             bm.Save(ms, encodingInfo, encodingParams);
