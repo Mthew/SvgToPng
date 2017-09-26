@@ -44,14 +44,15 @@ namespace SVGtoIMG.Converter
 
     public class TicketBase
     {
+        public int IdPullTickets { get; set; }
         public string token { get; set; }
         public string Localidad { get; set; }
+        public string ImagenFondo { get; set; }
         public string Etapa { get; set; }
         public string Responsable { get; set; }
         public TicketType ticketType { get; set; }
         public int Cantidad { get; set; }
         public int InicioNumeracion { get; set; }
-        public string numericBarcode { get; set; }
         public TicketType getTicketType(string tipo)
         {
             switch (tipo)
