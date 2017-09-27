@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using SVGtoIMG.Data;
 using SVGtoIMG.Converter;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
 
 namespace SVGtoIMG.Desktop
 {
@@ -21,6 +23,229 @@ namespace SVGtoIMG.Desktop
         private TicketBase plantilla = null;
         private TransaccionPullTicketsImpresion InfTickets = null;
         private int k = 0;
+
+        SocketPermission permission;
+        Socket sListener;
+        IPEndPoint ipEndPoint;
+        Socket handler;
+
+        private void Start_Click()
+        {
+            try
+            {
+                // Creates one SocketPermission object for access restrictions
+                permission = new SocketPermission(
+                NetworkAccess.Accept,     // Allowed to accept connections 
+                TransportType.Tcp,        // Defines transport types 
+                "",                       // The IP addresses of local host 
+                SocketPermission.AllPorts // Specifies all ports 
+                );
+
+                // Listening Socket object 
+                sListener = null;
+
+                // Ensures the code to have permission to access a Socket 
+                permission.Demand();
+
+                // Resolves a host name to an IPHostEntry instance 
+                IPHostEntry ipHost = Dns.GetHostEntry("");
+
+                // Gets first IP address associated with a localhost 
+                IPAddress ipAddr = ipHost.AddressList[0];
+
+                // Creates a network endpoint 
+                ipEndPoint = new IPEndPoint(ipAddr, 4510);
+
+                // Create one Socket object to listen the incoming connection 
+                sListener = new Socket(
+                    ipAddr.AddressFamily,
+                    SocketType.Stream,
+                    ProtocolType.Tcp
+                    );
+
+                // Associates a Socket with a local endpoint 
+                sListener.Bind(ipEndPoint);
+
+                //tbStatus.Text = "Server started.";
+
+                //Start_Button.IsEnabled = false;
+                //StartListen_Button.IsEnabled = true;
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        private void Listen_Click()
+        {
+            try
+            {
+                // Places a Socket in a listening state and specifies the maximum 
+                // Length of the pending connections queue 
+                sListener.Listen(10);
+
+                // Begins an asynchronous operation to accept an attempt 
+                AsyncCallback aCallback = new AsyncCallback(AcceptCallback);
+                sListener.BeginAccept(aCallback, sListener);
+
+                //tbStatus.Text = "Server is now listening on " + ipEndPoint.Address + " port: " + ipEndPoint.Port;
+
+                //StartListen_Button.IsEnabled = false;
+                //Send_Button.IsEnabled = true;
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        public void AcceptCallback(IAsyncResult ar)
+        {
+            Socket listener = null;
+
+            // A new Socket to handle remote host communication 
+            Socket handler = null;
+            try
+            {
+                // Receiving byte array 
+                byte[] buffer = new byte[1024];
+                // Get Listening Socket object 
+                listener = (Socket)ar.AsyncState;
+                // Create a new socket 
+                handler = listener.EndAccept(ar);
+
+                // Using the Nagle algorithm 
+                handler.NoDelay = false;
+
+                // Creates one object array for passing data 
+                object[] obj = new object[2];
+                obj[0] = buffer;
+                obj[1] = handler;
+
+                // Begins to asynchronously receive data 
+                handler.BeginReceive(
+                    buffer,        // An array of type Byt for received data 
+                    0,             // The zero-based position in the buffer  
+                    buffer.Length, // The number of bytes to receive 
+                    SocketFlags.None,// Specifies send and receive behaviors 
+                    new AsyncCallback(ReceiveCallback),//An AsyncCallback delegate 
+                    obj            // Specifies infomation for receive operation 
+                    );
+
+                // Begins an asynchronous operation to accept an attempt 
+                AsyncCallback aCallback = new AsyncCallback(AcceptCallback);
+                listener.BeginAccept(aCallback, listener);
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        public void ReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // Fetch a user-defined object that contains information 
+                object[] obj = new object[2];
+                obj = (object[])ar.AsyncState;
+
+                // Received byte array 
+                byte[] buffer = (byte[])obj[0];
+
+                // A Socket to handle remote host communication. 
+                handler = (Socket)obj[1];
+
+                // Received message 
+                string content = string.Empty;
+
+
+                // The number of bytes received. 
+                int bytesRead = handler.EndReceive(ar);
+
+                if (bytesRead > 0)
+                {
+                    content += Encoding.Unicode.GetString(buffer, 0,
+                        bytesRead);
+
+                    // If message contains "<Client Quit>", finish receiving
+                    if (content.IndexOf("<Client Quit>") > -1)
+                    {
+                        // Convert byte array to string
+                        string str = content.Substring(0, content.LastIndexOf("<Client Quit>"));
+                        ToPrint(str);
+                        //this is used because the UI couldn't be accessed from an external Thread
+                        //this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                        //{
+                        //    tbAux.Text = "Read " + str.Length * 2 + " bytes from client.\n Data: " + str;
+                        //}
+                        //);
+                    }
+                    else
+                    {
+                        // Continues to asynchronously receive data
+                        byte[] buffernew = new byte[1024];
+                        obj[0] = buffernew;
+                        obj[1] = handler;
+                        handler.BeginReceive(buffernew, 0, buffernew.Length,
+                            SocketFlags.None,
+                            new AsyncCallback(ReceiveCallback), obj);
+                    }
+
+                    //this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                    //{
+                    //    tbAux.Text = content;
+                    //}
+                    //);
+                }
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        private void Send_Click()
+        {
+            try
+            {
+                // Convert byte array to string 
+                string str = "Como estas ";
+
+                // Prepare the reply message 
+                byte[] byteData =
+                    Encoding.Unicode.GetBytes(str);
+
+                // Sends data asynchronously to a connected Socket 
+                handler.BeginSend(byteData, 0, byteData.Length, 0,
+                    new AsyncCallback(SendCallback), handler);
+
+                //Send_Button.IsEnabled = false;
+                //Close_Button.IsEnabled = true;
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        public void SendCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // A Socket which has sent the data to remote host 
+                Socket handler = (Socket)ar.AsyncState;
+
+                // The number of bytes sent to the Socket 
+                int bytesSend = handler.EndSend(ar);
+                Console.WriteLine(
+                    "Sent {0} bytes to Client", bytesSend);
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        private void Close_Click()
+        {
+            try
+            {
+                if (sListener.Connected)
+                {
+                    sListener.Shutdown(SocketShutdown.Receive);
+                    sListener.Close();
+                }
+
+                //Close_Button.IsEnabled = false;
+            }
+            catch (Exception exc) { MessageBox.Show(exc.ToString()); }
+        }
+
+        //https://stackoverflow.com/questions/37226176/winsock-server-client-application-in-c-sharp
 
         public Form1()
         {
@@ -52,12 +277,14 @@ namespace SVGtoIMG.Desktop
         private void m_PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap thisTicket = null;
+            Image imgFondo = null;
             Rectangle rect = new Rectangle();
             const int aumentoX = 10, aumentoY = 5;
             int w = papersize.Width, h = papersize.Height, lastTicketNumber = 0;
             string numeroText = string.Empty;
 
-            var tickets = db.TicketsEventos.FirstOrDefault(o => o.Id == plantilla.IdPullTickets).Tickets.Where(o => o.Numero > plantilla.InicioNumeracion && o.IdEstado == EstadoTicket.DISPONIBLE).OrderBy(o=>o.Numero).Take(plantilla.Cantidad);
+            //Cargar los tickets a imprimir en una lista desde el principio e ir removiendo cada una que se valla imprimiendo
+            var tickets = db.TicketsEventos.FirstOrDefault(o => o.Id == plantilla.IdPullTickets).Tickets.Where(o => o.Numero > plantilla.InicioNumeracion && o.IdEstado == EstadoTicket.DISPONIBLE).OrderBy(o => o.Numero).Take(plantilla.Cantidad);
             if (tickets.Any())
             {
                 foreach (var ticket in tickets)
@@ -70,23 +297,33 @@ namespace SVGtoIMG.Desktop
 
                     string imageText = plantilla.ImagenFondo;
                     //string fromBase = String.Format("data:image/png;base64,{0}", imageText);
-
-                    byte[] imageBytes = Convert.FromBase64String(imageText);
-                    using (MemoryStream ms = new MemoryStream(imageBytes, 0,
-                      imageBytes.Length))
+                    try
                     {
-                        ms.Write(imageBytes, 0, imageBytes.Length);
-                        thisTicket = new Bitmap(ms,true);
+                        byte[] imageBytes = Convert.FromBase64String(imageText.Replace("data:image/png;base64,", ""));
+                        using (MemoryStream ms = new MemoryStream(imageBytes, 0,
+                          imageBytes.Length))
+                        {
+                            ms.Write(imageBytes, 0, imageBytes.Length);
+
+                            //imgFondo = System.Drawing.Image.FromStream(ms, true);
+                            thisTicket = new Bitmap(ms, true);
+                            thisTicket.SetResolution(e.Graphics.DpiX, e.Graphics.DpiY);
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        string msg = ex.Message;
+                    }
+
 
                     // Set world transform of graphics object to translate.
                     e.Graphics.TranslateTransform(w, h);
                     // Then to rotate, prepending rotation matrix.
                     e.Graphics.RotateTransform(180.0F, System.Drawing.Drawing2D.MatrixOrder.Prepend);
 
-                    Bitmap bm = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
-                    bm.SetResolution(e.Graphics.DpiX, e.Graphics.DpiY);
-                    Graphics g = Graphics.FromImage(bm);
+                    //Bitmap bm = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
+                    //bm.SetResolution(e.Graphics.DpiX, e.Graphics.DpiY);
+                    //Graphics g = Graphics.FromImage(bm);
 
                     StringFormat drawFormat = new StringFormat();
                     drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
@@ -166,26 +403,37 @@ namespace SVGtoIMG.Desktop
                     }
 
                     //e.Graphics.DrawRectangle(new Pen(Color.Black), rect);
-                    ticket.IdEstado = EstadoTicket.IMPRESO;                    
+                    ticket.IdEstado = EstadoTicket.IMPRESO;
                     lastTicketNumber = (int)ticket.Numero;
                     db.SaveChanges();
                     e.HasMorePages = true;
                     return;
                 }
+                //thisTicket.Dispose();
+                this.InfTickets.NumeroFinal = lastTicketNumber;
+                this.InfTickets.Fecha = DateTime.Now;
+                db.SaveChanges();
+                MessageBox.Show("Tickes Impresos");
             }
-
-            //thisTicket.Dispose();
-            this.InfTickets.NumeroFinal = lastTicketNumber;
-            this.InfTickets.Fecha = DateTime.Now;
-            db.SaveChanges();
-            
             e.HasMorePages = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Start_Click();
+            //Listen_Click();
 
-            this.InfTickets = db.TransaccionPullTicketsImpresions.Where(o => o.Token == "7530A39A-169A-4B83-B476-9AF84A7CECA2" && o.IdEstado == EstadoTicket.DISPONIBLE).OrderByDescending(o => o.Id).FirstOrDefault();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ToPrint("7530A39A-169A-4B83-B476-9AF84A7CECA2");
+
+        }
+
+        public void ToPrint(string token)
+        {
+            this.InfTickets = db.TransaccionPullTicketsImpresions.Where(o => o.Token == token && o.IdEstado == EstadoTicket.DISPONIBLE).OrderByDescending(o => o.Id).FirstOrDefault();
 
             if (this.InfTickets != null)
             {
@@ -211,13 +459,19 @@ namespace SVGtoIMG.Desktop
                 {
                     plantilla.Etapa = string.Format("Etapa: {0}", Etapa.Nombre);
                 }
+                doPrintActive();
             }
 
             //AQui poner el escuchador e imprimir, crear un meodo para guardar los tickets(barcode, numricbarcode y analizar si se guarda el numero del ticket)
 
-            doPrintActive();
+
             //c.DrawFromSvg(200, 550);
             //c.SvgToImg();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Close_Click();
         }
     }
 
