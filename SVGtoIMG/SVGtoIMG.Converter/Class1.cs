@@ -42,8 +42,9 @@ namespace SVGtoIMG.Converter
         public const int REIMPRESO = 5;
     }
 
-    public class TicketBase
+    public class TransaccionTickets
     {
+        public int Id { get; set; }
         public int IdPullTickets { get; set; }
         public string token { get; set; }
         public string Localidad { get; set; }
@@ -53,6 +54,7 @@ namespace SVGtoIMG.Converter
         public TicketType ticketType { get; set; }
         public int Cantidad { get; set; }
         public int InicioNumeracion { get; set; }
+        public List<_Ticket> Tickets { get; set; }
         public TicketType getTicketType(string tipo)
         {
             switch (tipo)
@@ -62,6 +64,12 @@ namespace SVGtoIMG.Converter
                 default: return TicketType.NONE;
             }
         }
+    }
+
+    public class _Ticket {
+        public int Id { get; set; }
+        public int Numero { get; set; }
+        public string NumericBarcode { get; set; }
     }
 
     public class Converter

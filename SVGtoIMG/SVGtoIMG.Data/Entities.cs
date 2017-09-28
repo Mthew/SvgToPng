@@ -2565,8 +2565,8 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
-		private long? _numericBarcode;
-		public virtual long? NumericBarcode
+		private string _numericBarcode;
+		public virtual string NumericBarcode
 		{
 			get
 			{

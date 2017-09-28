@@ -660,8 +660,8 @@
         <orm:field name="_barcode" property="Barcode" behavior="readwrite" uniqueId="a3cc13d3-8bab-44a7-9d22-49cd2956ac0a" type="System.String">
           <orm:column name="barcode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
         </orm:field>
-        <orm:field name="_numericBarcode" property="NumericBarcode" behavior="readwrite" uniqueId="36af2e56-e693-4e46-8574-4300c683ab90" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
-          <orm:column name="numericBarcode" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:field name="_numericBarcode" property="NumericBarcode" behavior="readwrite" uniqueId="36af2e56-e693-4e46-8574-4300c683ab90" type="System.String">
+          <orm:column name="numericBarcode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="_idEstado" property="IdEstado" behavior="readwrite" uniqueId="d41a1168-7de3-40b3-9bdf-88937dcdc922" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="idEstado" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
@@ -2124,7 +2124,7 @@
         <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
         <orm:column name="numero" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="barcode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
-        <orm:column name="numericBarcode" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="numericBarcode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="idEstado" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="fechaImpresion" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
         <orm:column name="idTicketsEvento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
@@ -2989,7 +2989,7 @@
       <Property Id="0e774e02-d159-48b2-a3aa-8e34d5cfe397" name="FechaImpresion" type="DateTime" label="FechaImpresion : DateTime" nullable="true" kind="Persistent" fieldName="_fechaImpresion" />
       <Property Id="d41a1168-7de3-40b3-9bdf-88937dcdc922" name="IdEstado" type="Int32" label="IdEstado : Int32" nullable="true" kind="Persistent" fieldName="_idEstado" />
       <Property Id="7c507208-a149-4687-b365-45fc8c580bef" name="IdTicketsEvento" type="Int32" label="IdTicketsEvento : Int32" nullable="true" kind="Persistent" fieldName="_idTicketsEvento" />
-      <Property Id="36af2e56-e693-4e46-8574-4300c683ab90" name="NumericBarcode" type="Int64" label="NumericBarcode : Int64" nullable="true" kind="Persistent" fieldName="_numericBarcode" />
+      <Property Id="36af2e56-e693-4e46-8574-4300c683ab90" name="NumericBarcode" label="NumericBarcode : String" nullable="true" kind="Persistent" fieldName="_numericBarcode" />
       <Property Id="31d15135-0ee4-40a7-8a30-ebb4e1826ddf" name="Numero" type="Int32" label="Numero : Int32" nullable="true" kind="Persistent" fieldName="_numero" />
       <AssociationTargets>
         <Association Id="e6564faf-c4bb-4c06-a7b1-202362ec636f" SourceMultiplicity="ZeroOne" name="TicketHasEstadoImpresion">
