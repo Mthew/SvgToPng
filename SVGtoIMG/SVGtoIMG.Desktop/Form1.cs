@@ -18,6 +18,8 @@ namespace SVGtoIMG.Desktop
 {
     public partial class Form1 : Form
     {
+        //https://www.codeproject.com/Articles/1063910/WebSocket-Server-in-Csharp Web-Sockets Exaple
+
         private SVGtoIMG.Converter.Converter c = null;
         private Entities db = null;
         private TransaccionTickets plantilla = null;
@@ -299,7 +301,7 @@ namespace SVGtoIMG.Desktop
                 //string fromBase = String.Format("data:image/png;base64,{0}", imageText);
                 try
                 {
-                    byte[] imageBytes = Convert.FromBase64String(imageText.Replace("data:image/png;base64,", ""));
+                    byte[] imageBytes = Convert.FromBase64String(imageText.Replace("data:image/jpeg;base64,", ""));
                     using (MemoryStream ms = new MemoryStream(imageBytes, 0,
                       imageBytes.Length))
                     {
@@ -339,6 +341,7 @@ namespace SVGtoIMG.Desktop
                 int posXNumericBarcode = Convert.ToInt32((w / 2) - (e.Graphics.MeasureString(ticket.NumericBarcode.ToString(), fuenteNumericBarcode).Width / 2));
 
                 Image barcode = c.getBarcode(1, ticket.NumericBarcode.ToString());
+                
                 int posXBarCode = (w / 2) - (barcode.Width / 2);
 
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -358,6 +361,7 @@ namespace SVGtoIMG.Desktop
                             //e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
                             //thisTicket = new Bitmap(@"C:\test\plantilla.png", false);
                             //bk = Image.FromFile(@"C:\test\plantilla.png");
+
                             e.Graphics.DrawImage(thisTicket, rect);
 
                             //e.Graphics.DrawImage(bk, rect);
@@ -408,8 +412,11 @@ namespace SVGtoIMG.Desktop
                 lastTicketNumber = (int)ticket.Numero;
                 plantilla.Tickets.Remove(ticket);
                 db.SaveChanges();
-                e.HasMorePages = true;
-                return;
+                if (plantilla.Tickets.Count() >= 1)
+                {
+                    e.HasMorePages = true;
+                    return;
+                }
             }
 
             //thisTicket.Dispose();
@@ -417,9 +424,11 @@ namespace SVGtoIMG.Desktop
             var InfTickets = db.TransaccionPullTicketsImpresions.FirstOrDefault(o => o.Id == plantilla.Id);
             InfTickets.NumeroFinal = lastTicketNumber;
             InfTickets.Fecha = DateTime.Now;
+            InfTickets.IdEstado = EstadoTicket.IMPRESO;
             db.SaveChanges();
 
-            MessageBox.Show("Tickes Impresos");
+            //MessageBox.Show("Tickes Impresos");
+            //ReiniciarCoenxion();
             e.HasMorePages = false;
         }
 
@@ -427,7 +436,6 @@ namespace SVGtoIMG.Desktop
         {
             //Start_Click();
             //Listen_Click();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -466,7 +474,7 @@ namespace SVGtoIMG.Desktop
                     plantilla.Etapa = string.Format("Etapa: {0}", Etapa.Nombre);
                 }
 
-                var tickets = db.TicketsEventos.FirstOrDefault(o => o.Id == plantilla.IdPullTickets).Tickets.Where(o => o.Numero > plantilla.InicioNumeracion && o.IdEstado == EstadoTicket.DISPONIBLE).OrderBy(o => o.Numero).Take(plantilla.Cantidad);
+                var tickets = db.TicketsEventos.FirstOrDefault(o => o.Id == plantilla.IdPullTickets).Tickets.Where(o => o.IdEstado == EstadoTicket.DISPONIBLE).OrderBy(o => o.Numero).Take(plantilla.Cantidad);
                 if (tickets.Any())
                 {
                     plantilla.Tickets = new List<_Ticket>();
@@ -478,6 +486,7 @@ namespace SVGtoIMG.Desktop
                     }).ToList());
                 }
                 doPrintActive();
+                //ReiniciarCoenxion();
             }
 
             //AQui poner el escuchador e imprimir, crear un meodo para guardar los tickets(barcode, numricbarcode y analizar si se guarda el numero del ticket)
@@ -485,6 +494,19 @@ namespace SVGtoIMG.Desktop
 
             //c.DrawFromSvg(200, 550);
             //c.SvgToImg();
+        }
+
+        private void ReiniciarCoenxion()
+        {
+            try
+            {
+                Close_Click();
+                Start_Click();
+                Listen_Click();
+            }
+            catch 
+            {
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
