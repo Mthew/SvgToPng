@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\TestBarCode\Zen.Barcode.Core.csproj">
+      <Project>{91c66b43-0a98-4635-a757-fd12777d959b}</Project>
+      <Name>Zen.Barcode.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SVGtoIMG.Converter\SVGtoIMG.Converter.csproj">
       <Project>{50ffc8f5-92ea-44ee-b7e8-648eaaa9f6b6}</Project>
       <Name>SVGtoIMG.Converter</Name>

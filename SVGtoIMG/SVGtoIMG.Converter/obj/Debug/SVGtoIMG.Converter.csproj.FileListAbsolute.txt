@@ -102,3 +102,5 @@ C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\de\PdfSharp.
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.csprojResolveAssemblyReference.cache
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.dll
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\obj\Debug\SVGtoIMG.Converter.pdb
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Spire.Barcode.dll
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Converter\bin\Debug\Spire.Barcode.xml

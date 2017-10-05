@@ -20,6 +20,7 @@ using PdfSharp.Drawing;
 using PdfSharp.Fonts;
 using PdfSharp.Drawing.Layout;
 using System.Collections;
+using Spire.Barcode;
 
 namespace SVGtoIMG.Converter
 {
@@ -30,7 +31,7 @@ namespace SVGtoIMG.Converter
     public enum TicketType
     {
         small = 0,
-        grande = 1, 
+        grande = 1,
         NONE = -1
     }
 
@@ -66,7 +67,8 @@ namespace SVGtoIMG.Converter
         }
     }
 
-    public class _Ticket {
+    public class _Ticket
+    {
         public int Id { get; set; }
         public int Numero { get; set; }
         public string NumericBarcode { get; set; }
@@ -225,6 +227,28 @@ namespace SVGtoIMG.Converter
             //    byte[] imageBytes = ms.ToArray();
             //    //return string.Format("data:image/png;base64,{0}", Convert.ToBase64String(imageBytes));
             //}
+        }
+
+        public Image GenerateBarCodeTest(string text)
+        {
+            //set the configuration of barcode
+            BarcodeSettings settings = new BarcodeSettings();
+            string data = text;
+
+            settings.Data2D = data;
+            settings.Data = data;
+            settings.Type = BarCodeType.Code128;  //(BarCodeType)Enum.Parse(typeof(BarCodeType), type);
+            short fontSize = 8;
+            string font = "SimSun";
+            settings.TextFont = new System.Drawing.Font(font, fontSize, FontStyle.Bold);
+            short barHeight = 20;
+            settings.BarHeight = barHeight;
+            settings.ShowText = true;            
+            settings.ShowCheckSumChar = true;
+            settings.ForeColor = Color.Black;
+            BarCodeGenerator generator = new BarCodeGenerator(settings);
+            Image barcode = generator.GenerateImage();
+            return barcode;
         }
 
         private Bitmap CreateBitmapImage(string sImageText)
@@ -471,7 +495,7 @@ namespace SVGtoIMG.Converter
 
 
 
-            
+
 
 
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;

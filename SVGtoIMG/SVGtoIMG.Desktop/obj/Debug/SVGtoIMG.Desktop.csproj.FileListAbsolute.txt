@@ -94,3 +94,6 @@ C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\PdfSharp.xml
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.pdb
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Svg.xml
 C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\de\PdfSharp.resources.dll
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Zen.Barcode.Core.pdb
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Spire.Barcode.dll
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.Desktop\bin\Debug\Spire.Barcode.xml

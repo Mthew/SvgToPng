@@ -13,6 +13,7 @@ using SVGtoIMG.Converter;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using Zen.Barcode;
 
 namespace SVGtoIMG.Desktop
 {
@@ -30,6 +31,7 @@ namespace SVGtoIMG.Desktop
         IPEndPoint ipEndPoint;
         Socket handler;
 
+        #region Socket
         private void Start_Click()
         {
             try
@@ -245,6 +247,7 @@ namespace SVGtoIMG.Desktop
             }
             catch (Exception exc) { MessageBox.Show(exc.ToString()); }
         }
+        #endregion
 
         //https://stackoverflow.com/questions/37226176/winsock-server-client-application-in-c-sharp
 
@@ -293,7 +296,7 @@ namespace SVGtoIMG.Desktop
 
                 numeroText = string.Format("TICKET {0}", ticket.Numero);
 
-                ticket.NumericBarcode = DateTime.Now.ToFileTime().ToString();
+                ticket.NumericBarcode = DateTime.Now.ToFileTime().ToString().Replace("5", "1").Replace("8", "1").Replace("9", "1");// "0773911515056442422"; //
 
                 var black = new SolidBrush(Color.Black);
 
@@ -340,8 +343,30 @@ namespace SVGtoIMG.Desktop
                 int posXResponsable = Convert.ToInt32((w / 2));
                 int posXNumericBarcode = Convert.ToInt32((w / 2) - (e.Graphics.MeasureString(ticket.NumericBarcode.ToString(), fuenteNumericBarcode).Width / 2));
 
-                Image barcode = c.getBarcode(1, ticket.NumericBarcode.ToString());
-                
+
+
+
+
+                ///__________________________
+                ///
+
+                //Image barcode = c.getBarcode(1, ticket.NumericBarcode.ToString());
+
+                //Zen.Barcode.BarcodeSymbology s = Zen.Barcode.BarcodeSymbology.Code25InterleavedC;
+                //BarcodeDraw drawObject = BarcodeDrawFactory.GetSymbology(s);
+
+                //var metrics = drawObject.GetDefaultMetrics(40);
+                //metrics.Scale = 1;
+                //Image barcode = drawObject.Draw(ticket.NumericBarcode.ToString(), metrics);
+
+
+                Image barcode = c.GenerateBarCodeTest(ticket.NumericBarcode.ToString());
+                ////____________________
+
+
+
+
+
                 int posXBarCode = (w / 2) - (barcode.Width / 2);
 
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -366,7 +391,10 @@ namespace SVGtoIMG.Desktop
 
                             //e.Graphics.DrawImage(bk, rect);
 
-                            e.Graphics.DrawImage(barcode, new PointF(posXBarCode, 420));
+                            //e.Graphics.DrawImage(barcode, new PointF(posXBarCode, 420));
+                            e.Graphics.DrawImage(barcode, new Rectangle(new Point(posXBarCode, 420), new Size(barcode.Width / 2, barcode.Height / 2)));
+
+
                             e.Graphics.DrawString(ticket.NumericBarcode.ToString(), fuenteNumericBarcode, black, posXNumericBarcode, 460 + aumentoY);
 
                             e.Graphics.DrawString(numeroText, fuenteNumero, black, posXnumero, 10);
@@ -504,14 +532,14 @@ namespace SVGtoIMG.Desktop
                 Start_Click();
                 Listen_Click();
             }
-            catch 
+            catch
             {
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Close_Click();
+            //Close_Click();
         }
     }
 
