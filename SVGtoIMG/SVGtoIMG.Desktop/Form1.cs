@@ -14,6 +14,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using Zen.Barcode;
+using System.Drawing.Imaging;
 
 namespace SVGtoIMG.Desktop
 {
@@ -271,6 +272,7 @@ namespace SVGtoIMG.Desktop
         {
             m_PrintDocument = new PrintDocument();
             m_PrintDocument.PrinterSettings = PrintDialog1.PrinterSettings;
+            //m_PrintDocument.PrinterSettings.PrinterName = "Microsoft Print to PDF";
             m_PrintDocument.DefaultPageSettings.Color = true;
             //m_PrintDocument.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(8, 8, 35, 35);
             papersize = m_PrintDocument.DefaultPageSettings.PaperSize;
@@ -280,6 +282,8 @@ namespace SVGtoIMG.Desktop
 
         private void m_PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            //papersize = new PaperSize("Prueba", 200, 550);
+
             Bitmap thisTicket = null;
             Image imgFondo = null;
             Rectangle rect = new Rectangle();
@@ -296,7 +300,7 @@ namespace SVGtoIMG.Desktop
 
                 numeroText = string.Format("TICKET {0}", ticket.Numero);
 
-                ticket.NumericBarcode = DateTime.Now.ToFileTime().ToString().Replace("5", "1").Replace("8", "1").Replace("9", "1");// "0773911515056442422"; //
+                ticket.NumericBarcode = DateTime.Now.ToFileTime().ToString();//"131517994256516479";.Replace("5", "1").Replace("8", "1").Replace("9", "1");// "0773911515056442422"; //
 
                 var black = new SolidBrush(Color.Black);
 
@@ -321,10 +325,10 @@ namespace SVGtoIMG.Desktop
                 }
 
 
-                // Set world transform of graphics object to translate.
-                e.Graphics.TranslateTransform(w, h);
-                // Then to rotate, prepending rotation matrix.
-                e.Graphics.RotateTransform(180.0F, System.Drawing.Drawing2D.MatrixOrder.Prepend);
+                //// Set world transform of graphics object to translate.
+                //e.Graphics.TranslateTransform(w, h);
+                //// Then to rotate, prepending rotation matrix.
+                //e.Graphics.RotateTransform(180.0F, System.Drawing.Drawing2D.MatrixOrder.Prepend);
 
                 //Bitmap bm = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
                 //bm.SetResolution(e.Graphics.DpiX, e.Graphics.DpiY);
@@ -352,20 +356,16 @@ namespace SVGtoIMG.Desktop
 
                 //Image barcode = c.getBarcode(1, ticket.NumericBarcode.ToString());
 
-                //Zen.Barcode.BarcodeSymbology s = Zen.Barcode.BarcodeSymbology.Code25InterleavedC;
-                //BarcodeDraw drawObject = BarcodeDrawFactory.GetSymbology(s);
+                Zen.Barcode.BarcodeSymbology s = Zen.Barcode.BarcodeSymbology.Code128;
+                BarcodeDraw drawObject = BarcodeDrawFactory.GetSymbology(s);
 
-                //var metrics = drawObject.GetDefaultMetrics(40);
-                //metrics.Scale = 1;
-                //Image barcode = drawObject.Draw(ticket.NumericBarcode.ToString(), metrics);
+                var metrics = drawObject.GetDefaultMetrics(40);
+                metrics.Scale = 1;
+                Image barcode = drawObject.Draw(ticket.NumericBarcode.ToString(), metrics);
 
 
-                Image barcode = c.GenerateBarCodeTest(ticket.NumericBarcode.ToString());
+                //Image barcode = c.GenerateBarCodeTest(ticket.NumericBarcode.ToString());
                 ////____________________
-
-
-
-
 
                 int posXBarCode = (w / 2) - (barcode.Width / 2);
 
@@ -391,8 +391,8 @@ namespace SVGtoIMG.Desktop
 
                             //e.Graphics.DrawImage(bk, rect);
 
-                            //e.Graphics.DrawImage(barcode, new PointF(posXBarCode, 420));
-                            e.Graphics.DrawImage(barcode, new Rectangle(new Point(posXBarCode, 420), new Size(barcode.Width / 2, barcode.Height / 2)));
+                            e.Graphics.DrawImage(barcode, new PointF(posXBarCode, 420));
+                            //e.Graphics.DrawImage(barcode, new Rectangle(new Point(posXBarCode, 420), new Size(barcode.Width / 2, barcode.Height / 2)));
 
 
                             e.Graphics.DrawString(ticket.NumericBarcode.ToString(), fuenteNumericBarcode, black, posXNumericBarcode, 460 + aumentoY);
@@ -434,6 +434,14 @@ namespace SVGtoIMG.Desktop
                         }
                 }
 
+                //using (Bitmap bmp = new Bitmap(papersize.Width, papersize.Height, e.Graphics))
+                //{
+                //    EncoderParameters encodingParams = new EncoderParameters();
+                //    encodingParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 100);
+                //    ImageCodecInfo encodingInfo = c.getFormatData("PNG");
+                //    bmp.Save(@"C:\test\enviar\print(1).png", encodingInfo, encodingParams);
+                //}
+
                 //e.Graphics.DrawRectangle(new Pen(Color.Black), rect);
                 dbTicket.IdEstado = EstadoTicket.IMPRESO;
                 dbTicket.NumericBarcode = ticket.NumericBarcode;
@@ -462,6 +470,11 @@ namespace SVGtoIMG.Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //string s = "";
+            //foreach (string printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            //{
+            //    s = printer;
+            //}
             //Start_Click();
             //Listen_Click();
         }

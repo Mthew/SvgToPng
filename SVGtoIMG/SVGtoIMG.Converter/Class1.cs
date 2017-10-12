@@ -663,6 +663,10 @@ namespace SVGtoIMG.Converter
             //bmp.Save(pngPath, ImageFormat.Jpeg); ;
         }
 
+        public ImageCodecInfo getFormatData(string tipo) {
+            return barCodeClass.FindCodecInfo(tipo);
+        }
+
         //public void DrawFromSvg(Graphics g, Bitmap bm)
         //{
         //    string pngPath = @"C:\test\ImageGenerated(10).bmp";

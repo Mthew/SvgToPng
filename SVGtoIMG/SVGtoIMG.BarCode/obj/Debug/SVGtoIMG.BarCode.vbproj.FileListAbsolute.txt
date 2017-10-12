@@ -23,3 +23,11 @@ C:\SourceCode\SvgToPng\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.vbpr
 C:\SourceCode\SvgToPng\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.dll
 C:\SourceCode\SvgToPng\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.xml
 C:\SourceCode\SvgToPng\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.dll
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.pdb
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\bin\Debug\SVGtoIMG.BarCode.xml
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.Resources.resources
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.vbproj.GenerateResource.Cache
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.dll
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.xml
+C:\D\SourceCode\Git\SvgToPng2\SVGtoIMG\SVGtoIMG.BarCode\obj\Debug\SVGtoIMG.BarCode.pdb
