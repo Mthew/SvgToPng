@@ -47,6 +47,7 @@ namespace SVGtoIMG.Converter
     {
         public int Id { get; set; }
         public int IdPullTickets { get; set; }
+        public string PrinterName { get; set; }
         public string token { get; set; }
         public string Localidad { get; set; }
         public string ImagenFondo { get; set; }
@@ -243,7 +244,7 @@ namespace SVGtoIMG.Converter
             settings.TextFont = new System.Drawing.Font(font, fontSize, FontStyle.Bold);
             short barHeight = 20;
             settings.BarHeight = barHeight;
-            settings.ShowText = true;            
+            settings.ShowText = true;
             settings.ShowCheckSumChar = true;
             settings.ForeColor = Color.Black;
             BarCodeGenerator generator = new BarCodeGenerator(settings);
@@ -663,7 +664,8 @@ namespace SVGtoIMG.Converter
             //bmp.Save(pngPath, ImageFormat.Jpeg); ;
         }
 
-        public ImageCodecInfo getFormatData(string tipo) {
+        public ImageCodecInfo getFormatData(string tipo)
+        {
             return barCodeClass.FindCodecInfo(tipo);
         }
 

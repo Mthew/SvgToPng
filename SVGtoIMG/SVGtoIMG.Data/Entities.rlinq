@@ -247,6 +247,9 @@
         <orm:field name="_numeroFinal" property="NumeroFinal" behavior="readwrite" uniqueId="62d91013-8df9-4e5b-b81e-b0ace7e98d69" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="numeroFinal" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
+        <orm:field name="_printerName" property="PrinterName" behavior="readwrite" uniqueId="e23c6a2f-7fa8-4d32-bd8f-af67d7483f2a" type="System.String">
+          <orm:column name="PrinterName" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_ticketsEtapa" property="TicketsEtapa" behavior="readwrite" uniqueId="5a238d8d-4543-42b0-a4a4-4969843999ab" type="SVGtoIMG.Data.TicketsEtapa">
           <orm:reference uniqueId="2a73e67b-0fcc-4449-b1cc-4b1570674f4a" association-name="TransaccionPullTicketsImpresionHasTicketsEtapa">
             <orm:sharedfield name="_idTicketsEtapa" target-class="SVGtoIMG.Data.TicketsEtapa" target-field="_id" />
@@ -2015,6 +2018,7 @@
         <orm:column name="idEstado" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="numeroInicial" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="numeroFinal" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="PrinterName" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
         <orm:constraint name="FK_transaccionPullTicketsImpresion_ticketsEtapa" delete-action="dbdefaultrule" destination-table="ticketsEtapa">
           <orm:column name="idTicketsEtapa" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
@@ -2706,6 +2710,7 @@
       <Property Id="d5ef225d-a1fb-4f70-907d-bdd21d2e7696" name="IdEstado" type="Int32" label="IdEstado : Int32" nullable="true" kind="Persistent" fieldName="_idEstado" />
       <Property Id="5aa49162-752a-4dfe-ab59-4c261841abdb" name="NumeroInicial" type="Int32" label="NumeroInicial : Int32" nullable="true" kind="Persistent" fieldName="_numeroInicial" />
       <Property Id="62d91013-8df9-4e5b-b81e-b0ace7e98d69" name="NumeroFinal" type="Int32" label="NumeroFinal : Int32" nullable="true" kind="Persistent" fieldName="_numeroFinal" />
+      <Property Id="e23c6a2f-7fa8-4d32-bd8f-af67d7483f2a" name="PrinterName" label="PrinterName : String" kind="Persistent" fieldName="_printerName" />
       <AssociationTargets>
         <Association Id="2a73e67b-0fcc-4449-b1cc-4b1570674f4a" SourceMultiplicity="ZeroOne" name="TransaccionPullTicketsImpresionHasTicketsEtapa">
           <DomainClassMoniker name="/Entities/TicketsEtapa" />

@@ -272,7 +272,7 @@ namespace SVGtoIMG.Desktop
         {
             m_PrintDocument = new PrintDocument();
             m_PrintDocument.PrinterSettings = PrintDialog1.PrinterSettings;
-            //m_PrintDocument.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            m_PrintDocument.PrinterSettings.PrinterName = plantilla.PrinterName;
             m_PrintDocument.DefaultPageSettings.Color = true;
             //m_PrintDocument.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(8, 8, 35, 35);
             papersize = m_PrintDocument.DefaultPageSettings.PaperSize;
@@ -464,7 +464,7 @@ namespace SVGtoIMG.Desktop
             db.SaveChanges();
 
             //MessageBox.Show("Tickes Impresos");
-            //ReiniciarCoenxion();
+            ReiniciarCoenxion();
             e.HasMorePages = false;
         }
 
@@ -475,13 +475,13 @@ namespace SVGtoIMG.Desktop
             //{
             //    s = printer;
             //}
-            //Start_Click();
-            //Listen_Click();
+            Start_Click();
+            Listen_Click();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ToPrint("7530A39A-169A-4B83-B476-9AF84A7CECA2");
+            ToPrint(Comun.GetMacAddress());
 
         }
 
@@ -495,6 +495,7 @@ namespace SVGtoIMG.Desktop
 
                 plantilla.Id = InfTickets.Id;
                 plantilla.IdPullTickets = (int)InfTickets.IdTicketsEvento;
+                plantilla.PrinterName = InfTickets.PrinterName;
 
                 var responsable = InfTickets.TicketsEvento.Evento.Empresario;
                 plantilla.Responsable = string.Format("RESPONSABLE: {0} NIT: {1}\nTICKETEVENTO NO SE HACE RESPONSABLE DE LA COMERCIALIZACIÓN DE ESTA ENTRADA", responsable.RazonSocial, responsable.Identificacion);
@@ -552,7 +553,7 @@ namespace SVGtoIMG.Desktop
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Close_Click();
+            Close_Click();
         }
     }
 

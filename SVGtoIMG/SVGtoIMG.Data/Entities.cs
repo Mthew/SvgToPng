@@ -1457,6 +1457,19 @@ namespace SVGtoIMG.Data
 			}
 		}
 		
+		private string _printerName;
+		public virtual string PrinterName
+		{
+			get
+			{
+				return this._printerName;
+			}
+			set
+			{
+				this._printerName = value;
+			}
+		}
+		
 		private TicketsEtapa _ticketsEtapa;
 		public virtual TicketsEtapa TicketsEtapa
 		{
